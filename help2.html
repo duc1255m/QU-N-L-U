@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lẩu Việt - Hương vị đậm đà khó quên</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="help.css">
+</head>
+<body class="h-full bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+<div id="logo" class="flex items-center space-x-3 cursor-pointer">
+                    <div class="w-12 h-12 fire-gradient rounded-full flex items-center justify-center text-2xl">
+                        🔥
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black text-white">LẨU VIỆT</h1>
+                        <p class="text-xs text-orange-300 -mt-1">AUTHENTIC TASTE</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="login.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">🏠</span>
+                        <span class="font-medium">Trang chủ</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="product2.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">🍲</span>
+                        <span class="font-medium">Sản phẩm</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="help2.html" class="group flex items-center space-x-2 text-orange-400 transition-all duration-300">
+                        <span class="text-lg">ℹ️</span>
+                        <span class="font-medium">Giới thiệu</span>
+                        <div class="w-full h-0.5 bg-orange-400"></div>
+                    </a>
+                    <a href="contact2.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">📞</span>
+                        <span class="font-medium">Liên hệ</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                </nav>
+                
+                <!-- Login Button -->
+                <button class="fire-gradient px-8 py-3 rounded-full font-bold text-white neon-glow" id="openLoginBtn">
+                    TÀI KHOẢN CỦA TÔI
+                </button>
+                
+                <!-- Mobile Menu -->
+                <button class="lg:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="relative min-h-screen flex items-center justify-center pattern-bg overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-32 left-10 floating-animation">
+            <div class="w-20 h-20 fire-gradient rounded-full opacity-20"></div>
+        </div>
+        <div class="absolute bottom-20 right-10 floating-animation" style="animation-delay: -2s;">
+            <div class="w-32 h-32 bg-orange-500 rounded-full opacity-10"></div>
+        </div>
+        <div class="absolute top-1/2 right-1/4 floating-animation" style="animation-delay: -4s;">
+            <div class="w-16 h-16 bg-red-500 rounded-full opacity-15"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 slide-in">
+            <div class="mb-8">
+                <div class="text-8xl mb-6 floating-animation">🏮</div>
+                <h1 class="text-6xl lg:text-8xl font-black mb-6">
+                    <span class="fire-gradient bg-clip-text text-transparent">GIỚI THIỆU</span>
+                </h1>
+                <p class="text-2xl lg:text-3xl text-gray-300 mb-8 font-light max-w-4xl mx-auto">
+                    Câu chuyện về hành trình mang hương vị đậm đà Việt Nam đến với mọi người
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="slide-in">
+                    <h2 class="text-5xl font-black mb-8">
+                        <span class="fire-gradient bg-clip-text text-transparent">CÂU CHUYỆN</span>
+                        <br>
+                        <span class="text-white">CỦA CHÚNG TÔI</span>
+                    </h2>
+                    <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                        <p>
+                            Lẩu Việt ra đời từ tình yêu sâu sắc với ẩm thực truyền thống Việt Nam và khát khao mang đến cho mọi người những trải nghiệm ẩm thực đích thực nhất.
+                        </p>
+                        <p>
+                            Bắt đầu từ một quán nhỏ với chỉ vài chiếc bàn, chúng tôi đã không ngừng nỗ lực để hoàn thiện công thức nấu nướng, tìm kiếm những nguyên liệu tươi ngon nhất và xây dựng đội ngũ phục vụ tận tâm.
+                        </p>
+                        <p>
+                            Ngày hôm nay, Lẩu Việt tự hào là điểm đến tin cậy của những ai yêu thích hương vị lẩu Việt Nam đậm đà, với hơn 5 chi nhánh trên khắp thành phố.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="w-full h-96 bg-gradient-to-br from-red-500 to-orange-500 rounded-3xl flex items-center justify-center neon-glow floating-animation">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">🍲</div>
+                            <h3 class="text-3xl font-bold text-white mb-2">10+ Năm</h3>
+                            <p class="text-orange-200 text-xl">Kinh nghiệm phục vụ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-20 bg-gray-900 pattern-bg">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-4">
+                    <span class="fire-gradient bg-clip-text text-transparent">LỊCH SỬ PHÁT TRIỂN</span>
+                </h2>
+                <p class="text-xl text-gray-400">Hành trình 10 năm xây dựng thương hiệu</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line rounded-full"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-16">
+                    <!-- 2014 -->
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="glass-effect rounded-3xl p-8 neon-glow">
+                                <h3 class="text-2xl font-bold text-white mb-2">2014</h3>
+                                <h4 class="text-xl font-semibold fire-gradient bg-clip-text text-transparent mb-4">Khởi đầu</h4>
+                                <p class="text-gray-300">Mở quán lẩu đầu tiên tại Quận 1 với 8 bàn và đội ngũ 5 người</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 fire-gradient rounded-full flex items-center justify-center relative z-10">
+                            <span class="text-white font-bold">🏪</span>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                    
+                    <!-- 2016 -->
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-8 h-8 fire-gradient rounded-full flex items-center justify-center relative z-10">
+                            <span class="text-white font-bold">🏆</span>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="glass-effect rounded-3xl p-8 neon-glow">
+                                <h3 class="text-2xl font-bold text-white mb-2">2016</h3>
+                                <h4 class="text-xl font-semibold fire-gradient bg-clip-text text-transparent mb-4">Thành công đầu tiên</h4>
+                                <p class="text-gray-300">Nhận giải "Quán ăn được yêu thích nhất" và mở chi nhánh thứ 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2018 -->
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="glass-effect rounded-3xl p-8 neon-glow">
+                                <h3 class="text-2xl font-bold text-white mb-2">2018</h3>
+                                <h4 class="text-xl font-semibold fire-gradient bg-clip-text text-transparent mb-4">Mở rộng</h4>
+                                <p class="text-gray-300">Phát triển thành chuỗi 3 chi nhánh và ra mắt dịch vụ giao hàng</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 fire-gradient rounded-full flex items-center justify-center relative z-10">
+                            <span class="text-white font-bold">🚀</span>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                    
+                    <!-- 2020 -->
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-8 h-8 fire-gradient rounded-full flex items-center justify-center relative z-10">
+                            <span class="text-white font-bold">💪</span>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="glass-effect rounded-3xl p-8 neon-glow">
+                                <h3 class="text-2xl font-bold text-white mb-2">2020</h3>
+                                <h4 class="text-xl font-semibold fire-gradient bg-clip-text text-transparent mb-4">Vượt khó khăn</h4>
+                                <p class="text-gray-300">Thích ứng với đại dịch, phát triển mạnh dịch vụ online</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2025 -->
+                    <div class="flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="glass-effect rounded-3xl p-8 neon-glow">
+                                <h3 class="text-2xl font-bold text-white mb-2">2025</h3>
+                                <h4 class="text-xl font-semibold fire-gradient bg-clip-text text-transparent mb-4">Hiện tại</h4>
+                                <p class="text-gray-300">5 chi nhánh, 100+ nhân viên và hàng nghìn khách hàng thân thiết</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 fire-gradient rounded-full flex items-center justify-center relative z-10">
+                            <span class="text-white font-bold">⭐</span>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-4">
+                    <span class="fire-gradient bg-clip-text text-transparent">CON SỐ ẤN TƯỢNG</span>
+                </h2>
+                <p class="text-xl text-gray-400">Những thành tựu chúng tôi tự hào</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="text-center glass-effect rounded-3xl p-8 neon-glow pulse-animation">
+                    <div class="text-6xl mb-4">🏪</div>
+                    <div class="text-4xl font-black fire-gradient bg-clip-text text-transparent mb-2 counter" data-target="5">0</div>
+                    <p class="text-xl text-white font-semibold">Chi nhánh</p>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="text-center glass-effect rounded-3xl p-8 neon-glow pulse-animation" style="animation-delay: 0.2s;">
+                    <div class="text-6xl mb-4">👥</div>
+                    <div class="text-4xl font-black fire-gradient bg-clip-text text-transparent mb-2 counter" data-target="100">0</div>
+                    <p class="text-xl text-white font-semibold">Nhân viên</p>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="text-center glass-effect rounded-3xl p-8 neon-glow pulse-animation" style="animation-delay: 0.4s;">
+                    <div class="text-6xl mb-4">❤️</div>
+                    <div class="text-4xl font-black fire-gradient bg-clip-text text-transparent mb-2 counter" data-target="10000">0</div>
+                    <p class="text-xl text-white font-semibold">Khách hàng</p>
+                </div>
+                
+                <!-- Stat 4 -->
+                <div class="text-center glass-effect rounded-3xl p-8 neon-glow pulse-animation" style="animation-delay: 0.6s;">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <div class="text-4xl font-black fire-gradient bg-clip-text text-transparent mb-2 counter" data-target="15">0</div>
+                    <p class="text-xl text-white font-semibold">Giải thưởng</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-900 pattern-bg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-4">
+                    <span class="fire-gradient bg-clip-text text-transparent">ĐỘI NGŨ</span>
+                </h2>
+                <p class="text-xl text-gray-400">Những người tạo nên thành công của Lẩu Việt</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="group glass-effect rounded-3xl overflow-hidden neon-glow">
+                    <div class="h-64 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300 relative z-10">👨‍🍳</div>
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">NHẬT ANH</h3>
+                        <p class="text-orange-400 font-semibold mb-4">Founder & CEO</p>
+                        <p class="text-gray-300">10 năm kinh nghiệm trong ngành F&B, tầm nhìn chiến lược và đam mê ẩm thực Việt</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="group glass-effect rounded-3xl overflow-hidden neon-glow">
+                    <div class="h-64 bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300 relative z-10">👩‍🍳</div>
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">Trần Thị B</h3>
+                        <p class="text-orange-400 font-semibold mb-4">Head Chef</p>
+                        <p class="text-gray-300">Bậc thầy về các món lẩu truyền thống, sáng tạo ra nhiều công thức độc đáo</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="group glass-effect rounded-3xl overflow-hidden neon-glow">
+                    <div class="h-64 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300 relative z-10">👨‍💼</div>
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">Lê Văn C</h3>
+                        <p class="text-orange-400 font-semibold mb-4">Operations Manager</p>
+                        <p class="text-gray-300">Chuyên gia vận hành, đảm bảo chất lượng dịch vụ nhất quán tại mọi chi nhánh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-4">
+                    <span class="fire-gradient bg-clip-text text-transparent">HÌNH ẢNH</span>
+                </h2>
+                <p class="text-xl text-gray-400">Không gian và món ăn tại Lẩu Việt</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group cursor-pointer neon-glow rounded-3xl overflow-hidden" onclick="openLightbox('🍲', 'Lẩu Thái chua cay đặc biệt')">
+                    <div class="h-64 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300 relative z-10">🍲</div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="group cursor-pointer neon-glow rounded-3xl overflow-hidden" onclick="openLightbox('🏪', 'Không gian nhà hàng sang trọng')">
+                    <div class="h-64 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300 relative z-10">🏪</div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="group cursor-pointer neon-glow rounded-3xl overflow-hidden" onclick="openLightbox('🥩', 'Thịt bò Úc cao cấp')">
+                    <div class="h-64 bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300 relative z-10">🥩</div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="group cursor-pointer neon-glow rounded-3xl overflow-hidden" onclick="openLightbox('🦐', 'Hải sản tươi sống')">
+                    <div class="h-64 bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300 relative z-10">🦐</div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="group cursor-pointer neon-glow rounded-3xl overflow-hidden" onclick="openLightbox('👥', 'Đội ngũ phục vụ chuyên nghiệp')">
+                    <div class="h-64 bg-gradient-to-br from-pink-500 to-red-500 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300 relative z-10">👥</div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="group cursor-pointer neon-glow rounded-3xl overflow-hidden" onclick="openLightbox('🏆', 'Giải thưởng và chứng nhận')">
+                    <div class="h-64 bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center relative">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <div class="text-8xl group-hover:scale-110 transition-transform duration-300 relative z-10">🏆</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="text-center">
+            <div id="lightboxEmoji" class="text-9xl mb-8"></div>
+            <h3 id="lightboxTitle" class="text-3xl font-bold text-white mb-4"></h3>
+            <button class="fire-gradient px-8 py-3 rounded-full font-bold text-white neon-glow">
+                ĐÓNG
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-3xl">
+                            🔥
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-black text-white">LẨU VIỆT</h3>
+                            <p class="text-orange-300">AUTHENTIC TASTE</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Mang đến cho bạn trải nghiệm ẩm thực lẩu Việt Nam đích thực với hương vị đậm đà, khó quên trong không gian ấm cúng và sang trọng.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            📘
+                        </button>
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            📷
+                        </button>
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            🐦
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">LIÊN HỆ</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-orange-400 text-xl">📍</span>
+                            <span class="text-gray-300">123 Đường Nguyễn Văn Linh<br>Quận 7, TP.HCM</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">📞</span>
+                            <span class="text-gray-300">0123 456 789</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">✉️</span>
+                            <span class="text-gray-300">info@lauviet.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">🕒</span>
+                            <span class="text-gray-300">10:00 - 22:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">LIÊN KẾT</h4>
+                    <div class="space-y-3">
+                        <a href="#home" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Trang chủ</a>
+                        <a href="#about" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Giới thiệu</a>
+                        <a href="#products" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Sản phẩm</a>
+                        <a href="#contact" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2025 LauViet. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="help2.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'994040ffb003b473',t:'MTc2MTM3OTk5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

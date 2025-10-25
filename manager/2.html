@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lẩu Việt - Lẩu Hải Sản Đặc Biệt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tk1.css">
+</head>
+<body class="h-full bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+
+<div id="logo" class="flex items-center space-x-3 cursor-pointer">
+                    <div class="w-12 h-12 fire-gradient rounded-full flex items-center justify-center text-2xl">
+                        🔥
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black text-white" >LẨU VIỆT</h1>
+                        <p class="text-xs text-orange-300 -mt-1">AUTHENTIC TASTE</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="../login.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">🏠</span>
+                        <span class="font-medium">Trang chủ</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="../products2.html" class="group flex items-center space-x-2 text-orange-400">
+                        <span class="text-lg">🍲</span>
+                        <span class="font-medium">Sản phẩm</span>
+                        <div class="w-full h-0.5 bg-orange-400"></div>
+                    </a>
+                    <a href="../help2.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">ℹ️</span>
+                        <span class="font-medium">Giới thiệu</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="../contact2.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">📞</span>
+                        <span class="font-medium">Liên hệ</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                </nav>
+                
+                <!-- Cart & User -->
+                <div class="flex items-center space-x-4">
+                    <button id="cartBtn" class="relative p-3 glass-effect rounded-full hover:fire-gradient transition-all duration-300">
+                        <span class="text-xl">🛒</span>
+                        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold">0</span>
+                    </button>
+                <!-- Login Button -->
+                <button class="fire-gradient px-8 py-3 rounded-full font-bold text-white neon-glow" id="openLoginBtn">
+                    TÀI KHOẢN CỦA TÔI
+                </button>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <button class="lg:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 min-h-screen bg-gray-900 pattern-bg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+            <!-- Breadcrumb -->
+            <div class="flex items-center space-x-2 text-gray-400 mb-8">
+                <a href="#home" class="hover:text-orange-400 transition-colors">Trang chủ</a>
+                <span>→</span>
+                <a href="#products" class="hover:text-orange-400 transition-colors">Sản phẩm</a>
+                <span>→</span>
+                <span class="text-white">Lẩu hải sản đặc biệt</span>
+            </div>
+
+            <div class="slide-in">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                    <!-- Product Images -->
+<div class="space-y-6">
+    <!-- Main Image -->
+    <div class="product-image rounded-3xl h-96 flex items-center justify-center neon-glow overflow-hidden">
+        <img src="../image/lẩu tôm.jpg" 
+             alt="Tôm sú" 
+             class="w-full h-full object-cover rounded-3xl">
+    </div>
+                        
+                        <!-- Thumbnail Images -->
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="product-image rounded-2xl h-24 flex items-center justify-center cursor-pointer zoom-effect">
+                                <span class="text-3xl">🦐</span>
+                            </div>
+                            <div class="product-image rounded-2xl h-24 flex items-center justify-center cursor-pointer zoom-effect">
+                                <span class="text-3xl">🦀</span>
+                            </div>
+                            <div class="product-image rounded-2xl h-24 flex items-center justify-center cursor-pointer zoom-effect">
+                                <span class="text-3xl">🐙</span>
+                            </div>
+                            <div class="product-image rounded-2xl h-24 flex items-center justify-center cursor-pointer zoom-effect">
+                                <span class="text-3xl">🐟</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div class="space-y-8">
+                        <!-- Title & Rating -->
+                        <div>
+                            <h1 class="text-4xl font-black mb-4">
+                                <span class="fire-gradient bg-clip-text text-transparent">LẨU TÔM CHUA</span>
+                            </h1>
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="flex items-center space-x-1">
+                                    <span class="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</span>
+                                    <span class="text-white font-semibold">4.8</span>
+                                </div>
+                                <span class="text-gray-400">|</span>
+                                <span class="text-gray-300">156 đánh giá</span>
+                                <span class="text-gray-400">|</span>
+                                <span class="text-green-400 font-semibold">Còn hàng</span>
+                            </div>
+                            <p class="text-gray-300 text-lg leading-relaxed">
+                                Lẩu hải sản đặc biệt với tôm sú tươi ngon, cua biển thơm ngọt, mực tươi dai giòn và cá bớp thịt chắc. 
+                                Nước dùng được ninh từ xương heo và hải sản trong 6 tiếng, tạo nên hương vị đậm đà khó quên.
+                            </p>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="glass-effect rounded-2xl p-6 neon-glow">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="text-4xl font-black fire-gradient bg-clip-text text-transparent" id="currentPrice">349.000đ</span>
+                                <span class="text-xl text-gray-400 line-through">520.000đ</span>
+                                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">-13%</span>
+                            </div>
+                            <p class="text-green-400 font-semibold">🎉 Khuyến mãi đặc biệt - Tiết kiệm 70.000đ</p>
+                        </div>
+
+                        <!-- Size Selection -->
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4">Chọn kích cỡ:</h3>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="size-option glass-effect rounded-2xl p-4 text-center border-2 border-gray-600" data-size="small" data-price="350000">
+                                    <div class="text-2xl mb-2">🍲</div>
+                                    <h4 class="font-bold text-white">Nhỏ</h4>
+                                    <p class="text-gray-400 text-sm">2-3 người</p>
+                                    <p class="text-orange-400 font-semibold">350.000đ</p>
+                                </div>
+                                <div class="size-option glass-effect rounded-2xl p-4 text-center border-2 border-orange-500 selected bg-orange-500 bg-opacity-20" data-size="medium" data-price="450000">
+                                    <div class="text-2xl mb-2">🍲</div>
+                                    <h4 class="font-bold text-white">Vừa</h4>
+                                    <p class="text-gray-400 text-sm">4-5 người</p>
+                                    <p class="text-orange-400 font-semibold">450.000đ</p>
+                                </div>
+                                <div class="size-option glass-effect rounded-2xl p-4 text-center border-2 border-gray-600" data-size="large" data-price="580000">
+                                    <div class="text-2xl mb-2">🍲</div>
+                                    <h4 class="font-bold text-white">Lớn</h4>
+                                    <p class="text-gray-400 text-sm">6-8 người</p>
+                                    <p class="text-orange-400 font-semibold">580.000đ</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quantity & Add to Cart -->
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-4">Số lượng:</h3>
+                                <div class="flex items-center space-x-4">
+                                    <button id="decreaseBtn" class="quantity-btn w-12 h-12 glass-effect rounded-full flex items-center justify-center text-xl font-bold hover:fire-gradient transition-all duration-300">
+                                        -
+                                    </button>
+                                    <span id="quantity" class="text-2xl font-bold text-white min-w-[3rem] text-center">1</span>
+                                    <button id="increaseBtn" class="quantity-btn w-12 h-12 glass-effect rounded-full flex items-center justify-center text-xl font-bold hover:fire-gradient transition-all duration-300">
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex space-x-4">
+                                <button id="addToCartBtn" class="flex-1 fire-gradient py-4 rounded-2xl font-bold text-white neon-glow transition-all duration-300 hover:scale-105">
+                                    🛒 THÊM VÀO GIỎ HÀNG
+                                </button>
+                                <button class="px-6 py-4 glass-effect rounded-2xl font-bold text-white hover:fire-gradient transition-all duration-300">
+                                    ❤️
+                                </button>
+                            </div>
+
+                            <button class="w-full bg-green-600 hover:bg-green-500 py-4 rounded-2xl font-bold text-white transition-all duration-300">
+                                📞 ĐẶT HÀNG NGAY - 0123 456 789
+                            </button>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-3 p-4 glass-effect rounded-2xl">
+                                <span class="text-2xl">🚚</span>
+                                <div>
+                                    <h4 class="font-semibold text-white">Giao hàng nhanh</h4>
+                                    <p class="text-gray-400 text-sm">30-45 phút</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-4 glass-effect rounded-2xl">
+                                <span class="text-2xl">🌊</span>
+                                <div>
+                                    <h4 class="font-semibold text-white">Hải sản tươi sống</h4>
+                                    <p class="text-gray-400 text-sm">Nhập khẩu hàng ngày</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-4 glass-effect rounded-2xl">
+                                <span class="text-2xl">🔥</span>
+                                <div>
+                                    <h4 class="font-semibold text-white">Nước dùng đặc biệt</h4>
+                                    <p class="text-gray-400 text-sm">Ninh 6 tiếng</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-4 glass-effect rounded-2xl">
+                                <span class="text-2xl">✨</span>
+                                <div>
+                                    <h4 class="font-semibold text-white">Chất lượng cao</h4>
+                                    <p class="text-gray-400 text-sm">Đảm bảo vệ sinh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Details Tabs -->
+                <div class="glass-effect rounded-3xl p-8 neon-glow mb-12">
+                    <!-- Tab Navigation -->
+                    <div class="flex flex-wrap gap-4 mb-8 border-b border-gray-600 pb-4">
+                        <button onclick="showTab('description')" class="tab-btn px-6 py-3 rounded-2xl font-semibold transition-all duration-300 bg-orange-500 text-white">
+                            📝 Mô tả chi tiết
+                        </button>
+                        <button onclick="showTab('ingredients')" class="tab-btn px-6 py-3 rounded-2xl font-semibold transition-all duration-300 hover:bg-gray-700 text-gray-300">
+                            🥘 Nguyên liệu
+                        </button>
+                        <button onclick="showTab('nutrition')" class="tab-btn px-6 py-3 rounded-2xl font-semibold transition-all duration-300 hover:bg-gray-700 text-gray-300">
+                            📊 Dinh dưỡng
+                        </button>
+                        <button onclick="showTab('reviews')" class="tab-btn px-6 py-3 rounded-2xl font-semibold transition-all duration-300 hover:bg-gray-700 text-gray-300">
+                            ⭐ Đánh giá (156)
+                        </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <!-- Description Tab -->
+                    <div id="description" class="tab-content active">
+                        <h2 class="text-2xl font-bold text-white mb-6">Mô tả sản phẩm</h2>
+                        <div class="space-y-6">
+                            <p class="text-gray-300 text-lg leading-relaxed">
+                                Lẩu hải sản đặc biệt của Lẩu Việt là sự kết hợp hoàn hảo giữa những loại hải sản tươi ngon nhất 
+                                và nước dùng được chế biến theo công thức bí truyền của gia đình. Món ăn mang đến trải nghiệm 
+                                ẩm thực đậm chất Việt Nam với hương vị biển cả đặc trưng.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white mb-4">🌊 Hải sản tươi sống</h3>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li>• Tôm sú size lớn (200g) - tươi ngon, thịt chắc</li>
+                                        <li>• Cua biển (300g) - thịt ngọt, càng đầy</li>
+                                        <li>• Mực tươi (250g) - dai giòn, không tanh</li>
+                                        <li>• Cá bớp (400g) - thịt trắng, ít xương</li>
+                                        <li>• Nghêu sò điệp (200g) - tươi sống</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-bold text-white mb-4">🍲 Nước dùng đặc biệt</h3>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li>• Ninh từ xương heo trong 6 tiếng</li>
+                                        <li>• Thêm đầu tôm, vỏ cua để tăng vị ngọt</li>
+                                        <li>• Gia vị truyền thống: mắm ruốc, me chua</li>
+                                        <li>• Rau thơm: ngò gai, kinh giới, lá lốt</li>
+                                        <li>• Không chất bảo quản, MSG</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-700 rounded-2xl p-6">
+                                <h3 class="text-xl font-bold text-white mb-4">👨‍🍳 Cách thưởng thức</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="text-center">
+                                        <div class="text-4xl mb-3">1️⃣</div>
+                                        <h4 class="font-semibold text-white mb-2">Đun sôi nước dùng</h4>
+                                        <p class="text-gray-300 text-sm">Đun sôi nước dùng trước khi cho hải sản vào</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-4xl mb-3">2️⃣</div>
+                                        <h4 class="font-semibold text-white mb-2">Cho hải sản theo thứ tự</h4>
+                                        <p class="text-gray-300 text-sm">Cá → Cua → Tôm → Mực → Nghêu sò</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-4xl mb-3">3️⃣</div>
+                                        <h4 class="font-semibold text-white mb-2">Thưởng thức khi chín</h4>
+                                        <p class="text-gray-300 text-sm">Chấm với nước mắm pha chanh ớt</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ingredients Tab -->
+                    <div id="ingredients" class="tab-content">
+                        <h2 class="text-2xl font-bold text-white mb-6">Nguyên liệu chi tiết</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div class="ingredient-card glass-effect rounded-2xl p-6 text-center neon-glow">
+                                <div class="text-4xl mb-3 floating-animation">🦐</div>
+                                <h3 class="font-bold text-white mb-2">Tôm sú</h3>
+                                <p class="text-gray-300 text-sm mb-2">200g</p>
+                                <p class="text-orange-400 text-xs">Tươi sống, size lớn</p>
+                            </div>
+                            
+                            <div class="ingredient-card glass-effect rounded-2xl p-6 text-center neon-glow" style="animation-delay: 0.2s;">
+                                <div class="text-4xl mb-3 floating-animation">🦀</div>
+                                <h3 class="font-bold text-white mb-2">Cua biển</h3>
+                                <p class="text-gray-300 text-sm mb-2">300g</p>
+                                <p class="text-orange-400 text-xs">Thịt ngọt, càng đầy</p>
+                            </div>
+                            
+                            <div class="ingredient-card glass-effect rounded-2xl p-6 text-center neon-glow" style="animation-delay: 0.4s;">
+                                <div class="text-4xl mb-3 floating-animation">🐙</div>
+                                <h3 class="font-bold text-white mb-2">Mực tươi</h3>
+                                <p class="text-gray-300 text-sm mb-2">250g</p>
+                                <p class="text-orange-400 text-xs">Dai giòn, không tanh</p>
+                            </div>
+                            
+                            <div class="ingredient-card glass-effect rounded-2xl p-6 text-center neon-glow" style="animation-delay: 0.6s;">
+                                <div class="text-4xl mb-3 floating-animation">🐟</div>
+                                <h3 class="font-bold text-white mb-2">Cá bớp</h3>
+                                <p class="text-gray-300 text-sm mb-2">400g</p>
+                                <p class="text-orange-400 text-xs">Thịt trắng, ít xương</p>
+                            </div>
+                            
+                            <div class="ingredient-card glass-effect rounded-2xl p-6 text-center neon-glow" style="animation-delay: 0.8s;">
+                                <div class="text-4xl mb-3 floating-animation">🐚</div>
+                                <h3 class="font-bold text-white mb-2">Nghêu sò</h3>
+                                <p class="text-gray-300 text-sm mb-2">200g</p>
+                                <p class="text-orange-400 text-xs">Tươi sống, ngọt nước</p>
+                            </div>
+                            
+                            <div class="ingredient-card glass-effect rounded-2xl p-6 text-center neon-glow" style="animation-delay: 1s;">
+                                <div class="text-4xl mb-3 floating-animation">🥬</div>
+                                <h3 class="font-bold text-white mb-2">Rau thơm</h3>
+                                <p class="text-gray-300 text-sm mb-2">Mix</p>
+                                <p class="text-orange-400 text-xs">Ngò gai, kinh giới</p>
+                            </div>
+                            
+                            <div class="ingredient-card glass-effect rounded-2xl p-6 text-center neon-glow" style="animation-delay: 1.2s;">
+                                <div class="text-4xl mb-3 floating-animation">🌶️</div>
+                                <h3 class="font-bold text-white mb-2">Gia vị</h3>
+                                <p class="text-gray-300 text-sm mb-2">Đặc biệt</p>
+                                <p class="text-orange-400 text-xs">Mắm ruốc, me chua</p>
+                            </div>
+                            
+                            <div class="ingredient-card glass-effect rounded-2xl p-6 text-center neon-glow" style="animation-delay: 1.4s;">
+                                <div class="text-4xl mb-3 floating-animation">🍲</div>
+                                <h3 class="font-bold text-white mb-2">Nước dùng</h3>
+                                <p class="text-gray-300 text-sm mb-2">1.5L</p>
+                                <p class="text-orange-400 text-xs">Ninh 6 tiếng</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nutrition Tab -->
+                    <div id="nutrition" class="tab-content">
+                        <h2 class="text-2xl font-bold text-white mb-6">Thông tin dinh dưỡng</h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="glass-effect rounded-2xl p-6">
+                                <h3 class="text-xl font-bold text-white mb-4">Giá trị dinh dưỡng (100g)</h3>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Calories</span>
+                                        <span class="text-white font-semibold">95 kcal</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Protein</span>
+                                        <span class="text-white font-semibold">18.2g</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Carbohydrate</span>
+                                        <span class="text-white font-semibold">2.1g</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Fat</span>
+                                        <span class="text-white font-semibold">1.8g</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Fiber</span>
+                                        <span class="text-white font-semibold">0.5g</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Sodium</span>
+                                        <span class="text-white font-semibold">380mg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="glass-effect rounded-2xl p-6">
+                                <h3 class="text-xl font-bold text-white mb-4">Vitamin & Khoáng chất</h3>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Vitamin A</span>
+                                        <span class="text-green-400 font-semibold">15% DV</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Vitamin C</span>
+                                        <span class="text-green-400 font-semibold">25% DV</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Calcium</span>
+                                        <span class="text-green-400 font-semibold">12% DV</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Iron</span>
+                                        <span class="text-green-400 font-semibold">18% DV</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Omega-3</span>
+                                        <span class="text-green-400 font-semibold">850mg</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300">Zinc</span>
+                                        <span class="text-green-400 font-semibold">20% DV</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 bg-green-500 bg-opacity-20 rounded-2xl p-6 border border-green-500">
+                            <h3 class="text-xl font-bold text-green-400 mb-4">🌟 Lợi ích sức khỏe</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• Giàu protein chất lượng cao</li>
+                                    <li>• Cung cấp Omega-3 tốt cho tim mạch</li>
+                                    <li>• Ít calories, phù hợp ăn kiêng</li>
+                                </ul>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• Tăng cường hệ miễn dịch</li>
+                                    <li>• Bổ sung khoáng chất thiết yếu</li>
+                                    <li>• Dễ tiêu hóa, phù hợp mọi lứa tuổi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div id="reviews" class="tab-content">
+                        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
+                            <h2 class="text-2xl font-bold text-white mb-4 lg:mb-0">Đánh giá khách hàng</h2>
+                            <button onclick="showWriteReview()" class="fire-gradient px-6 py-3 rounded-2xl font-bold text-white neon-glow transition-all duration-300 hover:scale-105">
+                                ✍️ VIẾT ĐÁNH GIÁ
+                            </button>
+                        </div>
+                        
+                        <!-- Rating Summary -->
+                        <div class="glass-effect rounded-2xl p-6 mb-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="text-center">
+                                    <div class="text-6xl font-black fire-gradient bg-clip-text text-transparent mb-2">4.8</div>
+                                    <div class="flex justify-center items-center space-x-1 mb-2">
+                                        <span class="text-yellow-400 text-2xl">⭐⭐⭐⭐⭐</span>
+                                    </div>
+                                    <p class="text-gray-300">Dựa trên 156 đánh giá</p>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                        <div class="flex-1 bg-gray-700 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 78%"></div>
+                                        </div>
+                                        <span class="text-gray-300 text-sm">122</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-yellow-400">⭐⭐⭐⭐</span>
+                                        <div class="flex-1 bg-gray-700 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 15%"></div>
+                                        </div>
+                                        <span class="text-gray-300 text-sm">23</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-yellow-400">⭐⭐⭐</span>
+                                        <div class="flex-1 bg-gray-700 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 5%"></div>
+                                        </div>
+                                        <span class="text-gray-300 text-sm">8</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-yellow-400">⭐⭐</span>
+                                        <div class="flex-1 bg-gray-700 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 2%"></div>
+                                        </div>
+                                        <span class="text-gray-300 text-sm">2</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-yellow-400">⭐</span>
+                                        <div class="flex-1 bg-gray-700 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 1%"></div>
+                                        </div>
+                                        <span class="text-gray-300 text-sm">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Individual Reviews -->
+                        <div class="space-y-6">
+                            <div class="review-card glass-effect rounded-2xl p-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 fire-gradient rounded-full flex items-center justify-center text-xl">
+                                        👤
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="font-bold text-white">Nguyễn Thị Mai</h4>
+                                            <span class="text-gray-400 text-sm">2 ngày trước</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1 mb-3">
+                                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                        </div>
+                                        <p class="text-gray-300 mb-3">
+                                            Lẩu hải sản rất tươi ngon! Tôm sú to và ngọt, cua biển thịt đầy. Nước dùng đậm đà, 
+                                            không tanh. Giao hàng nhanh, đóng gói cẩn thận. Sẽ đặt lại!
+                                        </p>
+                                        <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                            <button class="hover:text-orange-400 transition-colors">👍 Hữu ích (12)</button>
+                                            <button class="hover:text-orange-400 transition-colors">💬 Trả lời</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="review-card glass-effect rounded-2xl p-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 fire-gradient rounded-full flex items-center justify-center text-xl">
+                                        👤
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="font-bold text-white">Trần Văn Hùng</h4>
+                                            <span class="text-gray-400 text-sm">1 tuần trước</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1 mb-3">
+                                            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                        </div>
+                                        <p class="text-gray-300 mb-3">
+                                            Gia đình mình rất thích! Hải sản tươi, nước dùng ngọt thanh. Size vừa đủ cho 4 người ăn no. 
+                                            Giá cả hợp lý so với chất lượng. Nhân viên tư vấn nhiệt tình.
+                                        </p>
+                                        <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                            <button class="hover:text-orange-400 transition-colors">👍 Hữu ích (8)</button>
+                                            <button class="hover:text-orange-400 transition-colors">💬 Trả lời</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="review-card glass-effect rounded-2xl p-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 fire-gradient rounded-full flex items-center justify-center text-xl">
+                                        👤
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="font-bold text-white">Lê Thị Hoa</h4>
+                                            <span class="text-gray-400 text-sm">2 tuần trước</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1 mb-3">
+                                            <span class="text-yellow-400">⭐⭐⭐⭐</span>
+                                        </div>
+                                        <p class="text-gray-300 mb-3">
+                                            Món ăn ngon, hải sản tươi. Tuy nhiên mình thấy hơi mặn một chút. 
+                                            Giao hàng đúng giờ, shipper thân thiện. Nhìn chung hài lòng.
+                                        </p>
+                                        <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                            <button class="hover:text-orange-400 transition-colors">👍 Hữu ích (5)</button>
+                                            <button class="hover:text-orange-400 transition-colors">💬 Trả lời</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-8">
+                            <button class="bg-gray-600 hover:bg-gray-500 px-8 py-3 rounded-2xl font-bold text-white transition-all duration-300">
+                                XEM THÊM ĐÁNH GIÁ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Products -->
+                <div class="glass-effect rounded-3xl p-8 neon-glow">
+                    <h2 class="text-3xl font-bold text-white mb-8">
+                        <span class="fire-gradient bg-clip-text text-transparent">SẢN PHẨM LIÊN QUAN</span>
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Product 1 -->
+                        <div class="glass-effect rounded-2xl p-6 neon-glow hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <div class="product-image rounded-2xl h-32 flex items-center justify-center mb-4">
+                                <span class="text-4xl floating-animation">🥩</span>
+                            </div>
+                            <h3 class="font-bold text-white mb-2">Lẩu Thái chua cay</h3>
+                            <p class="text-gray-400 text-sm mb-3">Vị chua cay đặc trưng</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-orange-400 font-bold">280.000đ</span>
+                                <button class="fire-gradient px-3 py-1 rounded-full text-white text-sm font-medium">
+                                    Xem
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 2 -->
+                        <div class="glass-effect rounded-2xl p-6 neon-glow hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <div class="product-image rounded-2xl h-32 flex items-center justify-center mb-4">
+                                <span class="text-4xl floating-animation" style="animation-delay: 0.5s;">🍄</span>
+                            </div>
+                            <h3 class="font-bold text-white mb-2">Lẩu nấm thập cẩm</h3>
+                            <p class="text-gray-400 text-sm mb-3">Đậm đà hương nấm</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-orange-400 font-bold">220.000đ</span>
+                                <button class="fire-gradient px-3 py-1 rounded-full text-white text-sm font-medium">
+                                    Xem
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 3 -->
+                        <div class="glass-effect rounded-2xl p-6 neon-glow hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <div class="product-image rounded-2xl h-32 flex items-center justify-center mb-4">
+                                <span class="text-4xl floating-animation" style="animation-delay: 1s;">🐄</span>
+                            </div>
+                            <h3 class="font-bold text-white mb-2">Lẩu bò Úc cao cấp</h3>
+                            <p class="text-gray-400 text-sm mb-3">Thịt bò Úc nhập khẩu</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-orange-400 font-bold">380.000đ</span>
+                                <button class="fire-gradient px-3 py-1 rounded-full text-white text-sm font-medium">
+                                    Xem
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 4 -->
+                        <div class="glass-effect rounded-2xl p-6 neon-glow hover:scale-105 transition-all duration-300 cursor-pointer">
+                            <div class="product-image rounded-2xl h-32 flex items-center justify-center mb-4">
+                                <span class="text-4xl floating-animation" style="animation-delay: 1.5s;">🐷</span>
+                            </div>
+                            <h3 class="font-bold text-white mb-2">Lẩu kim chi Hàn Quốc</h3>
+                            <p class="text-gray-400 text-sm mb-3">Cay nồng đậm vị</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-orange-400 font-bold">320.000đ</span>
+                                <button class="fire-gradient px-3 py-1 rounded-full text-white text-sm font-medium">
+                                    Xem
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification -->
+    <div id="notification" class="notification glass-effect rounded-2xl p-6 neon-glow">
+        <div class="flex items-center space-x-3">
+            <div class="text-2xl">✅</div>
+            <div>
+                <h4 class="text-white font-semibold">Thành công!</h4>
+                <p class="text-gray-300 text-sm">Sản phẩm đã được thêm vào giỏ hàng.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-3xl">
+                            🔥
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-black text-white">LẨU VIỆT</h3>
+                            <p class="text-orange-300">AUTHENTIC TASTE</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Mang đến cho bạn trải nghiệm ẩm thực lẩu Việt Nam đích thực với hương vị đậm đà, khó quên trong không gian ấm cúng và sang trọng.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            📘
+                        </button>
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            📷
+                        </button>
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            🐦
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">LIÊN HỆ</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-orange-400 text-xl">📍</span>
+                            <span class="text-gray-300">123 Đường Nguyễn Văn Linh<br>Quận 7, TP.HCM</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">📞</span>
+                            <span class="text-gray-300">0123 456 789</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">✉️</span>
+                            <span class="text-gray-300">info@lauviet.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">🕒</span>
+                            <span class="text-gray-300">10:00 - 22:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">LIÊN KẾT</h4>
+                    <div class="space-y-3">
+                        <a href="#home" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Trang chủ</a>
+                        <a href="#about" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Giới thiệu</a>
+                        <a href="#products" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Sản phẩm</a>
+                        <a href="#contact" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2025 LauViet. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="tk1.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9941a71af08fe2e4',t:'MTc2MTM5NDY2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

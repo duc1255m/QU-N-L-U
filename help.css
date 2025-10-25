@@ -1,0 +1,90 @@
+body {
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .fire-gradient {
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #ffcc02, #ff6b35);
+            background-size: 400% 400%;
+            animation: fireGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes fireGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .neon-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .pattern-bg {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(247, 147, 30, 0.1) 0%, transparent 50%);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #ff6b35, #f7931e, #ffcc02);
+        }
+        
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }

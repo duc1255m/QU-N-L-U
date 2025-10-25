@@ -1,0 +1,231 @@
+/* ========== GLOBAL STYLES ========== */
+body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ========== FIRE GRADIENT ANIMATION ========== */
+.fire-gradient {
+  background: linear-gradient(45deg, #ff6b35, #f7931e, #ffcc02, #ff6b35);
+  background-size: 400% 400%;
+  animation: fireGlow 3s ease-in-out infinite;
+}
+
+@keyframes fireGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ========== GLASS EFFECT ========== */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ========== NEON GLOW EFFECT ========== */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+  transition: all 0.3s ease;
+}
+.neon-glow:hover {
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
+  transform: translateY(-2px);
+}
+
+/* ========== FLOATING ANIMATION ========== */
+.floating-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ========== SLIDE-IN ANIMATION ========== */
+.slide-in {
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== PATTERN BACKGROUND ========== */
+.pattern-bg {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(247, 147, 30, 0.1) 0%, transparent 50%);
+}
+
+/* ========== NAVIGATION LINKS ========== */
+.nav-link {
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: #fb923c;
+}
+
+/* ========== DISH CARDS ========== */
+.dish-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s;
+}
+.dish-card:hover {
+  transform: scale(1.05);
+}
+
+/* ========== NEWS CARDS ========== */
+.news-card {
+  background: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  transition: transform 0.3s;
+}
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ========== FOOTER LINKS ========== */
+.footer-link {
+  display: block;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+.footer-link:hover {
+  color: #fb923c;
+}
+
+/* ========== OVERLAY (NỀN MỜ) ========== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  z-index: 999;
+}
+
+/* ========== POPUP CHUNG ========== */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px 40px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+}
+
+.popup-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.popup-content label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="password"],
+.popup-content input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  color: #222;
+
+}
+
+/* ========== REMEMBER CHECKBOX ========== */
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+/* ========== BUTTONS ========== */
+.btn2 {
+  width: 100%;
+  background: #a8ee12;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn2:hover {
+  background: #005bb5;
+}
+
+/* ========== LINKS ========== */
+.forgot {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  color: #0071e3;
+  text-decoration: none;
+}
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* ========== QUÊN MẬT KHẨU ========== */
+.popup-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+.back-login {
+  text-align: center;
+  margin-top: 10px;
+}
+.back-login a {
+  color: #0071e3;
+  text-decoration: none;
+}
+.back-login a:hover {
+  text-decoration: underline;
+}
+
+/* ========== NÚT ĐÓNG POPUP ========== */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #888;
+  transition: 0.3s;
+}
+.close:hover {
+  color: #000;
+}

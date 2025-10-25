@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - Lẩu Việt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .fire-gradient {
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #ffcc02, #ff6b35);
+            background-size: 400% 400%;
+            animation: fireGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes fireGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .neon-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .pattern-bg {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(247, 147, 30, 0.1) 0%, transparent 50%);
+        }
+        
+        .product-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .quantity-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .quantity-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .cart-item {
+            transition: all 0.3s ease;
+        }
+        
+        .cart-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .remove-animation {
+            animation: removeItem 0.5s ease-out forwards;
+        }
+        
+        @keyframes removeItem {
+            0% { opacity: 1; transform: translateX(0); }
+            100% { opacity: 0; transform: translateX(-100%); }
+        }
+        
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease-out;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .coupon-input {
+            transition: all 0.3s ease;
+        }
+        
+        .coupon-input:focus {
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .checkout-step {
+            transition: all 0.3s ease;
+        }
+        
+        .checkout-step.active {
+            background: rgba(255, 107, 53, 0.2);
+            border-color: #ff6b35;
+        }
+        
+        .empty-cart {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .loading-spinner {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .success-animation {
+            animation: successPulse 0.6s ease-out;
+        }
+        
+        @keyframes successPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="h-full bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+<div id="logo" class="flex items-center space-x-3 cursor-pointer">
+                    <div class="w-12 h-12 fire-gradient rounded-full flex items-center justify-center text-2xl">
+                        🔥
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black text-white">LẨU VIỆT</h1>
+                        <p class="text-xs text-orange-300 -mt-1">AUTHENTIC TASTE</p>
+                    </div>
+                </div>
+                
+               <!-- Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="login.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">🏠</span>
+                        <span class="font-medium">Trang chủ</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="product2.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">🍲</span>
+                        <span class="font-medium">Sản phẩm</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="help2.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">ℹ️</span>
+                        <span class="font-medium">Giới thiệu</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="contact2.html" class="group flex items-center space-x-2 text-orange-400 transition-all duration-300">
+                        <span class="text-lg">📞</span>
+                        <span class="font-medium">Liên hệ</span>
+                        <div class="w-full h-0.5 bg-orange-400"></div>
+                    </a>
+                </nav>
+                
+                <!-- Cart & User -->
+                <div class="flex items-center space-x-4">
+                    <button id="cartBtn" class="relative p-3 glass-effect rounded-full fire-gradient">
+                        <span class="text-xl">🛒</span>
+                        <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold">3</span>
+                    </button>
+                    <button class="fire-gradient px-6 py-2 rounded-full font-bold text-white neon-glow text-sm" id="openLoginBtn">
+                        TÀI KHOẢN CỦA TÔI
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <button class="lg:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 min-h-screen bg-gray-900 pattern-bg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+            <!-- Breadcrumb -->
+            <div class="flex items-center space-x-2 text-gray-400 mb-8">
+                <a href="#home" class="hover:text-orange-400 transition-colors">Trang chủ</a>
+                <span>→</span>
+                <span class="text-white">Giỏ hàng</span>
+            </div>
+
+            <!-- Page Title -->
+            <div class="slide-in mb-8">
+                <h1 class="text-4xl font-black mb-4">
+                    <span class="fire-gradient bg-clip-text text-transparent">GIỎ HÀNG CỦA BẠN</span>
+                </h1>
+                <p class="text-gray-300 text-lg">Xem lại các sản phẩm đã chọn và tiến hành thanh toán</p>
+            </div>
+
+            <div class="slide-in">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Cart Items -->
+                    <div class="lg:col-span-2">
+                        <div class="glass-effect rounded-3xl p-8 neon-glow mb-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <h2 class="text-2xl font-bold text-white">Sản phẩm trong giỏ</h2>
+                                <button id="clearCartBtn" class="text-red-400 hover:text-red-300 transition-colors font-medium">
+                                    🗑️ Xóa tất cả
+                                </button>
+                            </div>
+
+                            <!-- Cart Items List -->
+                            <div id="cartItems" class="space-y-6">
+                                <!-- Cart Item 1 -->
+                                <div class="cart-item glass-effect rounded-2xl p-6" data-id="1" data-price="450000">
+                                    <div class="flex items-center space-x-6">
+                                        <!-- Product Image -->
+                                        <div class="product-image rounded-2xl w-24 h-24 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-3xl floating-animation">🦐</span>
+                                        </div>
+                                        
+                                        <!-- Product Info -->
+                                        <div class="flex-1">
+                                            <h3 class="text-xl font-bold text-white mb-2">Lẩu hải sản đặc biệt</h3>
+                                            <p class="text-gray-400 text-sm mb-2">Size: Vừa (4-5 người)</p>
+                                            <p class="text-orange-400 font-semibold text-lg">450.000đ</p>
+                                        </div>
+                                        
+                                        <!-- Quantity Controls -->
+                                        <div class="flex items-center space-x-3">
+                                            <button class="quantity-btn decrease-btn w-10 h-10 glass-effect rounded-full flex items-center justify-center text-lg font-bold hover:fire-gradient transition-all duration-300">
+                                                -
+                                            </button>
+                                            <span class="quantity text-xl font-bold text-white min-w-[2rem] text-center">2</span>
+                                            <button class="quantity-btn increase-btn w-10 h-10 glass-effect rounded-full flex items-center justify-center text-lg font-bold hover:fire-gradient transition-all duration-300">
+                                                +
+                                            </button>
+                                        </div>
+                                        
+                                        <!-- Remove Button -->
+                                        <button class="remove-btn text-red-400 hover:text-red-300 transition-colors p-2">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Cart Item 2 -->
+                                <div class="cart-item glass-effect rounded-2xl p-6" data-id="2" data-price="280000">
+                                    <div class="flex items-center space-x-6">
+                                        <!-- Product Image -->
+                                        <div class="product-image rounded-2xl w-24 h-24 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-3xl floating-animation" style="animation-delay: 0.5s;">🥩</span>
+                                        </div>
+                                        
+                                        <!-- Product Info -->
+                                        <div class="flex-1">
+                                            <h3 class="text-xl font-bold text-white mb-2">Lẩu Thái chua cay</h3>
+                                            <p class="text-gray-400 text-sm mb-2">Size: Nhỏ (2-3 người)</p>
+                                            <p class="text-orange-400 font-semibold text-lg">280.000đ</p>
+                                        </div>
+                                        
+                                        <!-- Quantity Controls -->
+                                        <div class="flex items-center space-x-3">
+                                            <button class="quantity-btn decrease-btn w-10 h-10 glass-effect rounded-full flex items-center justify-center text-lg font-bold hover:fire-gradient transition-all duration-300">
+                                                -
+                                            </button>
+                                            <span class="quantity text-xl font-bold text-white min-w-[2rem] text-center">1</span>
+                                            <button class="quantity-btn increase-btn w-10 h-10 glass-effect rounded-full flex items-center justify-center text-lg font-bold hover:fire-gradient transition-all duration-300">
+                                                +
+                                            </button>
+                                        </div>
+                                        
+                                        <!-- Remove Button -->
+                                        <button class="remove-btn text-red-400 hover:text-red-300 transition-colors p-2">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Cart Item 3 -->
+                                <div class="cart-item glass-effect rounded-2xl p-6" data-id="3" data-price="220000">
+                                    <div class="flex items-center space-x-6">
+                                        <!-- Product Image -->
+                                        <div class="product-image rounded-2xl w-24 h-24 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-3xl floating-animation" style="animation-delay: 1s;">🍄</span>
+                                        </div>
+                                        
+                                        <!-- Product Info -->
+                                        <div class="flex-1">
+                                            <h3 class="text-xl font-bold text-white mb-2">Lẩu nấm thập cẩm</h3>
+                                            <p class="text-gray-400 text-sm mb-2">Size: Nhỏ (2-3 người)</p>
+                                            <p class="text-orange-400 font-semibold text-lg">220.000đ</p>
+                                        </div>
+                                        
+                                        <!-- Quantity Controls -->
+                                        <div class="flex items-center space-x-3">
+                                            <button class="quantity-btn decrease-btn w-10 h-10 glass-effect rounded-full flex items-center justify-center text-lg font-bold hover:fire-gradient transition-all duration-300">
+                                                -
+                                            </button>
+                                            <span class="quantity text-xl font-bold text-white min-w-[2rem] text-center">1</span>
+                                            <button class="quantity-btn increase-btn w-10 h-10 glass-effect rounded-full flex items-center justify-center text-lg font-bold hover:fire-gradient transition-all duration-300">
+                                                +
+                                            </button>
+                                        </div>
+                                        
+                                        <!-- Remove Button -->
+                                        <button class="remove-btn text-red-400 hover:text-red-300 transition-colors p-2">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Empty Cart Message (Hidden by default) -->
+                            <div id="emptyCart" class="text-center py-16 hidden">
+                                <div class="empty-cart text-8xl mb-6">🛒</div>
+                                <h3 class="text-2xl font-bold text-white mb-4">Giỏ hàng trống</h3>
+                                <p class="text-gray-400 mb-8">Bạn chưa có sản phẩm nào trong giỏ hàng</p>
+                                <button class="fire-gradient px-8 py-3 rounded-2xl font-bold text-white neon-glow transition-all duration-300 hover:scale-105">
+                                    🍲 XEM SẢN PHẨM
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Coupon Section -->
+                        <div class="glass-effect rounded-3xl p-8 neon-glow">
+                            <h3 class="text-xl font-bold text-white mb-4">🎫 Mã giảm giá</h3>
+                            <div class="flex space-x-4">
+                                <input 
+                                    type="text" 
+                                    id="couponInput"
+                                    placeholder="Nhập mã giảm giá..." 
+                                    class="coupon-input flex-1 bg-gray-700 border border-gray-600 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+                                >
+                                <button id="applyCouponBtn" class="fire-gradient px-6 py-3 rounded-2xl font-bold text-white neon-glow transition-all duration-300 hover:scale-105">
+                                    ÁP DỤNG
+                                </button>
+                            </div>
+                            <div id="couponMessage" class="mt-4 text-sm hidden"></div>
+                            
+                            <!-- Available Coupons -->
+                            <div class="mt-6">
+                                <h4 class="text-lg font-semibold text-white mb-3">Mã khuyến mãi có sẵn:</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="coupon-card glass-effect rounded-2xl p-4 cursor-pointer hover:neon-glow transition-all duration-300" data-coupon="GIAM50K">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="text-2xl">🎉</div>
+                                            <div>
+                                                <h5 class="font-bold text-white">GIAM50K</h5>
+                                                <p class="text-gray-400 text-sm">Giảm 50.000đ cho đơn từ 500.000đ</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-card glass-effect rounded-2xl p-4 cursor-pointer hover:neon-glow transition-all duration-300" data-coupon="FREESHIP">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="text-2xl">🚚</div>
+                                            <div>
+                                                <h5 class="font-bold text-white">FREESHIP</h5>
+                                                <p class="text-gray-400 text-sm">Miễn phí giao hàng toàn quốc</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="lg:col-span-1">
+                        <div class="glass-effect rounded-3xl p-8 neon-glow sticky top-28">
+                            <h2 class="text-2xl font-bold text-white mb-6">Tóm tắt đơn hàng</h2>
+                            
+                            <!-- Order Details -->
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-300">Tạm tính:</span>
+                                    <span id="subtotal" class="text-white font-semibold">1.180.000đ</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-300">Phí giao hàng:</span>
+                                    <span id="shippingFee" class="text-white font-semibold">30.000đ</span>
+                                </div>
+                                <div class="flex justify-between items-center" id="discountRow" style="display: none;">
+                                    <span class="text-gray-300">Giảm giá:</span>
+                                    <span id="discount" class="text-green-400 font-semibold">-0đ</span>
+                                </div>
+                                <div class="border-t border-gray-600 pt-4">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xl font-bold text-white">Tổng cộng:</span>
+                                        <span id="total" class="text-2xl font-black fire-gradient bg-clip-text text-transparent">1.210.000đ</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Delivery Info -->
+                            <div class="bg-gray-700 rounded-2xl p-4 mb-6">
+                                <h3 class="font-bold text-white mb-3">🚚 Thông tin giao hàng</h3>
+                                <div class="space-y-2 text-sm">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-green-400">✓</span>
+                                        <span class="text-gray-300">Giao hàng trong 30-45 phút</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-green-400">✓</span>
+                                        <span class="text-gray-300">Miễn phí giao hàng từ 500.000đ</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-green-400">✓</span>
+                                        <span class="text-gray-300">Thanh toán khi nhận hàng</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Checkout Button -->
+                            <button id="checkoutBtn" class="w-full fire-gradient py-4 rounded-2xl font-bold text-white neon-glow transition-all duration-300 hover:scale-105 mb-4">
+                                🛒 THANH TOÁN NGAY
+                            </button>
+                            
+                            <button class="w-full bg-green-600 hover:bg-green-500 py-4 rounded-2xl font-bold text-white transition-all duration-300">
+                                📞 GỌI ĐẶT HÀNG - 0123 456 789
+                            </button>
+
+                            <!-- Payment Methods -->
+                            <div class="mt-6">
+                                <h3 class="font-bold text-white mb-3">💳 Phương thức thanh toán</h3>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div class="glass-effect rounded-2xl p-3 text-center">
+                                        <div class="text-2xl mb-1">💵</div>
+                                        <p class="text-xs text-gray-300">Tiền mặt</p>
+                                    </div>
+                                    <div class="glass-effect rounded-2xl p-3 text-center">
+                                        <div class="text-2xl mb-1">💳</div>
+                                        <p class="text-xs text-gray-300">Thẻ ATM</p>
+                                    </div>
+                                    <div class="glass-effect rounded-2xl p-3 text-center">
+                                        <div class="text-2xl mb-1">📱</div>
+                                        <p class="text-xs text-gray-300">Ví điện tử</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-effect rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto neon-glow">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-bold text-white">Thông tin đặt hàng</h2>
+                <button id="closeModalBtn" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Checkout Steps -->
+            <div class="flex items-center justify-between mb-8">
+                <div class="checkout-step active flex items-center space-x-2 px-4 py-2 rounded-2xl border-2 border-orange-500 bg-orange-500 bg-opacity-20">
+                    <span class="text-orange-400">1</span>
+                    <span class="text-white font-medium">Thông tin</span>
+                </div>
+                <div class="flex-1 h-0.5 bg-gray-600 mx-4"></div>
+                <div class="checkout-step flex items-center space-x-2 px-4 py-2 rounded-2xl border-2 border-gray-600">
+                    <span class="text-gray-400">2</span>
+                    <span class="text-gray-400 font-medium">Thanh toán</span>
+                </div>
+                <div class="flex-1 h-0.5 bg-gray-600 mx-4"></div>
+                <div class="checkout-step flex items-center space-x-2 px-4 py-2 rounded-2xl border-2 border-gray-600">
+                    <span class="text-gray-400">3</span>
+                    <span class="text-gray-400 font-medium">Hoàn thành</span>
+                </div>
+            </div>
+
+            <!-- Customer Information Form -->
+            <form id="checkoutForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="fullName" class="block text-white font-semibold mb-2">Họ và tên *</label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            required
+                            class="w-full bg-gray-700 border border-gray-600 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+                            placeholder="Nhập họ và tên"
+                        >
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-white font-semibold mb-2">Số điện thoại *</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            required
+                            class="w-full bg-gray-700 border border-gray-600 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+                            placeholder="Nhập số điện thoại"
+                        >
+                    </div>
+                </div>
+
+                <div>
+                    <label for="email" class="block text-white font-semibold mb-2">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        class="w-full bg-gray-700 border border-gray-600 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+                        placeholder="Nhập email (tùy chọn)"
+                    >
+                </div>
+
+                <div>
+                    <label for="address" class="block text-white font-semibold mb-2">Địa chỉ giao hàng *</label>
+                    <textarea 
+                        id="address" 
+                        required
+                        rows="3"
+                        class="w-full bg-gray-700 border border-gray-600 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+                        placeholder="Nhập địa chỉ chi tiết"
+                    ></textarea>
+                </div>
+
+                <div>
+                    <label for="notes" class="block text-white font-semibold mb-2">Ghi chú</label>
+                    <textarea 
+                        id="notes" 
+                        rows="2"
+                        class="w-full bg-gray-700 border border-gray-600 rounded-2xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+                        placeholder="Ghi chú thêm cho đơn hàng (tùy chọn)"
+                    ></textarea>
+                </div>
+
+                <!-- Payment Method -->
+                <div>
+                    <label class="block text-white font-semibold mb-4">Phương thức thanh toán *</label>
+                    <div class="space-y-3">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="cash" checked class="text-orange-400 focus:ring-orange-400">
+                            <span class="text-2xl">💵</span>
+                            <span class="text-white">Thanh toán khi nhận hàng (COD)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="card" class="text-orange-400 focus:ring-orange-400">
+                            <span class="text-2xl">💳</span>
+                            <span class="text-white">Thẻ ATM/Visa/Mastercard</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="ewallet" class="text-orange-400 focus:ring-orange-400">
+                            <span class="text-2xl">📱</span>
+                            <span class="text-white">Ví điện tử (MoMo, ZaloPay)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Order Summary in Modal -->
+                <div class="bg-gray-700 rounded-2xl p-6">
+                    <h3 class="font-bold text-white mb-4">📋 Tóm tắt đơn hàng</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Tạm tính:</span>
+                            <span id="modalSubtotal" class="text-white">1.180.000đ</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Phí giao hàng:</span>
+                            <span id="modalShipping" class="text-white">30.000đ</span>
+                        </div>
+                        <div class="flex justify-between" id="modalDiscountRow" style="display: none;">
+                            <span class="text-gray-300">Giảm giá:</span>
+                            <span id="modalDiscount" class="text-green-400">-0đ</span>
+                        </div>
+                        <div class="border-t border-gray-600 pt-2 mt-2">
+                            <div class="flex justify-between">
+                                <span class="font-bold text-white">Tổng cộng:</span>
+                                <span id="modalTotal" class="font-bold fire-gradient bg-clip-text text-transparent">1.210.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submitOrderBtn" class="w-full fire-gradient py-4 rounded-2xl font-bold text-white neon-glow transition-all duration-300 hover:scale-105">
+                    <span id="submitText">🛒 XÁC NHẬN ĐẶT HÀNG</span>
+                    <span id="loadingSpinner" class="loading-spinner hidden">⏳</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification glass-effect rounded-2xl p-6 neon-glow">
+        <div class="flex items-center space-x-3">
+            <div id="notificationIcon" class="text-2xl">✅</div>
+            <div>
+                <h4 id="notificationTitle" class="text-white font-semibold">Thành công!</h4>
+                <p id="notificationMessage" class="text-gray-300 text-sm">Thao tác đã được thực hiện.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cartItems = [
+            { id: 1, name: 'Lẩu hải sản đặc biệt', price: 450000, quantity: 2, size: 'Vừa (4-5 người)', emoji: '🦐' },
+            { id: 2, name: 'Lẩu Thái chua cay', price: 280000, quantity: 1, size: 'Nhỏ (2-3 người)', emoji: '🥩' },
+            { id: 3, name: 'Lẩu nấm thập cẩm', price: 220000, quantity: 1, size: 'Nhỏ (2-3 người)', emoji: '🍄' }
+        ];
+
+        let appliedCoupon = null;
+        let shippingFee = 30000;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartDisplay();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Quantity controls
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('increase-btn')) {
+                    const cartItem = e.target.closest('.cart-item');
+                    const itemId = parseInt(cartItem.dataset.id);
+                    updateQuantity(itemId, 1);
+                }
+                
+                if (e.target.classList.contains('decrease-btn')) {
+                    const cartItem = e.target.closest('.cart-item');
+                    const itemId = parseInt(cartItem.dataset.id);
+                    updateQuantity(itemId, -1);
+                }
+                
+                if (e.target.classList.contains('remove-btn') || e.target.closest('.remove-btn')) {
+                    const cartItem = e.target.closest('.cart-item');
+                    const itemId = parseInt(cartItem.dataset.id);
+                    removeItem(itemId);
+                }
+            });
+
+            // Clear cart
+            document.getElementById('clearCartBtn').addEventListener('click', clearCart);
+
+            // Coupon functionality
+            document.getElementById('applyCouponBtn').addEventListener('click', applyCoupon);
+            document.querySelectorAll('.coupon-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const couponCode = this.dataset.coupon;
+                    document.getElementById('couponInput').value = couponCode;
+                    applyCoupon();
+                });
+            });
+
+            // Checkout modal
+            document.getElementById('checkoutBtn').addEventListener('click', openCheckoutModal);
+            document.getElementById('closeModalBtn').addEventListener('click', closeCheckoutModal);
+            document.getElementById('checkoutForm').addEventListener('submit', submitOrder);
+
+            // Close modal when clicking outside
+            document.getElementById('checkoutModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeCheckoutModal();
+                }
+            });
+        }
+
+        function updateQuantity(itemId, change) {
+            const item = cartItems.find(item => item.id === itemId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeItem(itemId);
+                    return;
+                }
+                if (item.quantity > 10) {
+                    item.quantity = 10;
+                    showNotification('Số lượng tối đa là 10 sản phẩm', 'warning');
+                    return;
+                }
+                updateCartDisplay();
+                showNotification('Đã cập nhật số lượng sản phẩm');
+            }
+        }
+
+        function removeItem(itemId) {
+            const itemIndex = cartItems.findIndex(item => item.id === itemId);
+            if (itemIndex > -1) {
+                const cartItemElement = document.querySelector(`[data-id="${itemId}"]`);
+                cartItemElement.classList.add('remove-animation');
+                
+                setTimeout(() => {
+                    cartItems.splice(itemIndex, 1);
+                    updateCartDisplay();
+                    showNotification('Đã xóa sản phẩm khỏi giỏ hàng');
+                }, 500);
+            }
+        }
+
+        function clearCart() {
+            if (cartItems.length === 0) {
+                showNotification('Giỏ hàng đã trống', 'warning');
+                return;
+            }
+            
+            cartItems = [];
+            appliedCoupon = null;
+            updateCartDisplay();
+            showNotification('Đã xóa tất cả sản phẩm khỏi giỏ hàng');
+        }
+
+        function updateCartDisplay() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const emptyCartMessage = document.getElementById('emptyCart');
+            const cartCountElement = document.getElementById('cartCount');
+
+            // Update cart count
+            const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            cartCountElement.textContent = totalItems;
+
+            if (cartItems.length === 0) {
+                cartItemsContainer.style.display = 'none';
+                emptyCartMessage.classList.remove('hidden');
+            } else {
+                cartItemsContainer.style.display = 'block';
+                emptyCartMessage.classList.add('hidden');
+                
+                // Update cart items HTML
+                cartItemsContainer.innerHTML = cartItems.map(item => `
+                    <div class="cart-item glass-effect rounded-2xl p-6" data-id="${item.id}" data-price="${item.price}">
+                        <div class="flex items-center space-x-6">
+                            <div class="product-image rounded-2xl w-24 h-24 flex items-center justify-center flex-shrink-0">
+                                <span class="text-3xl floating-animation">${item.emoji}</span>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-bold text-white mb-2">${item.name}</h3>
+                                <p class="text-gray-400 text-sm mb-2">Size: ${item.size}</p>
+                                <p class="text-orange-400 font-semibold text-lg">${item.price.toLocaleString('vi-VN')}đ</p>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <button class="quantity-btn decrease-btn w-10 h-10 glass-effect rounded-full flex items-center justify-center text-lg font-bold hover:fire-gradient transition-all duration-300">
+                                    -
+                                </button>
+                                <span class="quantity text-xl font-bold text-white min-w-[2rem] text-center">${item.quantity}</span>
+                                <button class="quantity-btn increase-btn w-10 h-10 glass-effect rounded-full flex items-center justify-center text-lg font-bold hover:fire-gradient transition-all duration-300">
+                                    +
+                                </button>
+                            </div>
+                            <button class="remove-btn text-red-400 hover:text-red-300 transition-colors p-2">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            let discount = 0;
+            let finalShippingFee = shippingFee;
+
+            // Apply coupon discounts
+            if (appliedCoupon) {
+                if (appliedCoupon === 'GIAM50K' && subtotal >= 500000) {
+                    discount = 50000;
+                } else if (appliedCoupon === 'FREESHIP') {
+                    finalShippingFee = 0;
+                }
+            }
+
+            // Free shipping for orders over 500k
+            if (subtotal >= 500000) {
+                finalShippingFee = 0;
+            }
+
+            const total = subtotal + finalShippingFee - discount;
+
+            // Update main summary
+            document.getElementById('subtotal').textContent = subtotal.toLocaleString('vi-VN') + 'đ';
+            document.getElementById('shippingFee').textContent = finalShippingFee.toLocaleString('vi-VN') + 'đ';
+            document.getElementById('total').textContent = total.toLocaleString('vi-VN') + 'đ';
+
+            // Update discount display
+            const discountRow = document.getElementById('discountRow');
+            if (discount > 0) {
+                discountRow.style.display = 'flex';
+                document.getElementById('discount').textContent = '-' + discount.toLocaleString('vi-VN') + 'đ';
+            } else {
+                discountRow.style.display = 'none';
+            }
+
+            // Update modal summary
+            document.getElementById('modalSubtotal').textContent = subtotal.toLocaleString('vi-VN') + 'đ';
+            document.getElementById('modalShipping').textContent = finalShippingFee.toLocaleString('vi-VN') + 'đ';
+            document.getElementById('modalTotal').textContent = total.toLocaleString('vi-VN') + 'đ';
+
+            const modalDiscountRow = document.getElementById('modalDiscountRow');
+            if (discount > 0) {
+                modalDiscountRow.style.display = 'flex';
+                document.getElementById('modalDiscount').textContent = '-' + discount.toLocaleString('vi-VN') + 'đ';
+            } else {
+                modalDiscountRow.style.display = 'none';
+            }
+        }
+
+        function applyCoupon() {
+            const couponCode = document.getElementById('couponInput').value.trim().toUpperCase();
+            const couponMessage = document.getElementById('couponMessage');
+            const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            if (!couponCode) {
+                showCouponMessage('Vui lòng nhập mã giảm giá', 'error');
+                return;
+            }
+
+            if (couponCode === 'GIAM50K') {
+                if (subtotal >= 500000) {
+                    appliedCoupon = couponCode;
+                    showCouponMessage('Áp dụng thành công! Giảm 50.000đ', 'success');
+                    updateOrderSummary();
+                } else {
+                    showCouponMessage('Đơn hàng phải từ 500.000đ để sử dụng mã này', 'error');
+                }
+            } else if (couponCode === 'FREESHIP') {
+                appliedCoupon = couponCode;
+                showCouponMessage('Áp dụng thành công! Miễn phí giao hàng', 'success');
+                updateOrderSummary();
+            } else {
+                showCouponMessage('Mã giảm giá không hợp lệ hoặc đã hết hạn', 'error');
+            }
+        }
+
+        function showCouponMessage(message, type) {
+            const couponMessage = document.getElementById('couponMessage');
+            couponMessage.textContent = message;
+            couponMessage.className = `mt-4 text-sm ${type === 'success' ? 'text-green-400' : 'text-red-400'}`;
+            couponMessage.classList.remove('hidden');
+            
+            setTimeout(() => {
+                couponMessage.classList.add('hidden');
+            }, 5000);
+        }
+
+        function openCheckoutModal() {
+            if (cartItems.length === 0) {
+                showNotification('Giỏ hàng trống, không thể thanh toán', 'error');
+                return;
+            }
+            document.getElementById('checkoutModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitOrder(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitOrderBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            
+            // Show loading state
+            submitText.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+            submitBtn.disabled = true;
+            
+            // Simulate order processing
+            setTimeout(() => {
+                // Reset button state
+                submitText.classList.remove('hidden');
+                loadingSpinner.classList.add('hidden');
+                submitBtn.disabled = false;
+                
+                // Show success message
+                showNotification('Đặt hàng thành công! Chúng tôi sẽ liên hệ với bạn sớm nhất.', 'success');
+                
+                // Close modal and clear cart
+                closeCheckoutModal();
+                cartItems = [];
+                appliedCoupon = null;
+                updateCartDisplay();
+                
+                // Add success animation to checkout button
+                submitBtn.classList.add('success-animation');
+                setTimeout(() => {
+                    submitBtn.classList.remove('success-animation');
+                }, 600);
+                
+            }, 2000);
+        }
+
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            const icon = document.getElementById('notificationIcon');
+            const title = document.getElementById('notificationTitle');
+            const text = document.getElementById('notificationMessage');
+            
+            // Set icon and title based on type
+            switch(type) {
+                case 'error':
+                    icon.textContent = '❌';
+                    title.textContent = 'Lỗi!';
+                    break;
+                case 'warning':
+                    icon.textContent = '⚠️';
+                    title.textContent = 'Cảnh báo!';
+                    break;
+                default:
+                    icon.textContent = '✅';
+                    title.textContent = 'Thành công!';
+            }
+            
+            text.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 4000);
+        }
+                  // Khi click vào logo, quay về trang chủ
+  document.getElementById('logo').addEventListener('click', function() {
+      window.location.href = 'login.html'; // hoặc '#home' nếu là cùng trang
+  });
+    const tk = document.getElementById("openLoginBtn");
+tk.addEventListener("click", () => {
+  window.location.href = 'account/account.html';
+});
+
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-3xl">
+                            🔥
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-black text-white">LẨU VIỆT</h3>
+                            <p class="text-orange-300">AUTHENTIC TASTE</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Mang đến cho bạn trải nghiệm ẩm thực lẩu Việt Nam đích thực với hương vị đậm đà, khó quên trong không gian ấm cúng và sang trọng.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            📘
+                        </button>
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            📷
+                        </button>
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            🐦
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">LIÊN HỆ</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-orange-400 text-xl">📍</span>
+                            <span class="text-gray-300">123 Đường Nguyễn Văn Linh<br>Quận 7, TP.HCM</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">📞</span>
+                            <span class="text-gray-300">0123 456 789</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">✉️</span>
+                            <span class="text-gray-300">info@lauviet.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">🕒</span>
+                            <span class="text-gray-300">10:00 - 22:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">LIÊN KẾT</h4>
+                    <div class="space-y-3">
+                        <a href="#home" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Trang chủ</a>
+                        <a href="#about" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Giới thiệu</a>
+                        <a href="#products" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Sản phẩm</a>
+                        <a href="#contact" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2025 LauViet. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99420143a33de2e4',t:'MTc2MTM5ODM1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

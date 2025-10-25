@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sữa Tươi Nguyên Chất Premium - MilkStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tk1.css">
+</head>
+<body>
+  <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">🥛</span>
+                <span>MilkStore</span>
+            </a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Trang chủ</a></li>
+                    <li><a href="../product.html">Sản phẩm</a></li>
+                    <li><a href="../help.html">Giới thiệu</a></li>
+                    <li><a href="../contact.html">Liên hệ</a></li>
+                </ul>
+                <button class="login-btn">Đăng nhập</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="#home">Trang chủ</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="#products">Sản phẩm</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="#dairy">Sữa tươi</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>Sữa Tươi Nguyên Chất Premium</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="product-content">
+        <!-- Product Details -->
+        <section class="product-details">
+            <div class="product-main">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image" id="mainImage">
+                        🥛
+                        <div class="product-badge">Mới</div>
+                    </div>
+                    <div class="thumbnails">
+                        <div class="thumbnail active" onclick="changeImage('🥛')">🥛</div>
+                        <div class="thumbnail" onclick="changeImage('🧊')">🧊</div>
+                        <div class="thumbnail" onclick="changeImage('🌿')">🌿</div>
+                        <div class="thumbnail" onclick="changeImage('📦')">📦</div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1>Sữa Tươi Nguyên Chất Premium</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <span class="rating-text">(4.8/5 - 156 đánh giá)</span>
+                    </div>
+
+                    <div class="product-price">
+                        <span class="current-price">45.000₫</span>
+                        <span class="original-price">55.000₫</span>
+                        <span class="discount">-18%</span>
+                    </div>
+
+                    <p class="product-description">
+                        Sữa tươi nguyên chất Premium được chế biến từ nguồn sữa bò tươi 100% tự nhiên, 
+                        không chất bảo quản, giàu protein và canxi. Sản phẩm được pasterize ở nhiệt độ 
+                        thấp để giữ nguyên hương vị thơm ngon và giá trị dinh dưỡng tối ưu.
+                    </p>
+
+                    <!-- Product Options -->
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label class="option-label">Kích thước:</label>
+                            <div class="size-options">
+                                <div class="size-option active" onclick="selectSize(this)">500ml</div>
+                                <div class="size-option" onclick="selectSize(this)">1L</div>
+                                <div class="size-option" onclick="selectSize(this)">2L</div>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label class="option-label">Số lượng:</label>
+                            <div class="quantity-selector">
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" max="99" id="quantity">
+                                    <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                                </div>
+                                <span>Còn lại: 48 sản phẩm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="product-actions">
+                        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ hàng</button>
+                        <button class="buy-now" onclick="buyNow()">Mua ngay</button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(this)">♡</button>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="feature">
+                            <span class="feature-icon">🚚</span>
+                            <span class="feature-text">Giao hàng miễn phí</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">❄️</span>
+                            <span class="feature-text">Bảo quản lạnh</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🏆</span>
+                            <span class="feature-text">Chất lượng cao</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🔄</span>
+                            <span class="feature-text">Đổi trả 7 ngày</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Tabs -->
+        <section class="product-tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab(this, 'description')">Mô tả</button>
+                <button class="tab-btn" onclick="switchTab(this, 'ingredients')">Thành phần</button>
+                <button class="tab-btn" onclick="switchTab(this, 'instructions')">Hướng dẫn</button>
+                <button class="tab-btn" onclick="switchTab(this, 'reviews')">Đánh giá</button>
+            </div>
+
+            <div class="tab-content active" id="description">
+                <h3>Mô tả sản phẩm</h3>
+                <p>Sữa Tươi Nguyên Chất Premium là sản phẩm cao cấp được sản xuất từ nguồn sữa bò tươi 100% tự nhiên, không pha trộn chất phụ gia hay chất bảo quản. Quy trình sản xuất hiện đại với công nghệ pasterize ở nhiệt độ thấp giúp giữ nguyên hương vị thơm ngon tự nhiên và các chất dinh dưỡng quý giá.</p>
+                <p>Sản phẩm chứa hàm lượng protein cao, canxi, vitamin D và các khoáng chất thiết yếu, góp phần tăng cường sức khỏe xương khớp, hỗ trợ phát triển chiều cao và tăng cường hệ miễn dịch cho cả gia đình.</p>
+                <p>Đặc biệt phù hợp cho trẻ em trong độ tuổi phát triển, người cao tuổi cần bổ sung canxi, và những ai yêu thích hương vị sữa tươi nguyên chất, thơm ngon.</p>
+            </div>
+
+            <div class="tab-content" id="ingredients">
+                <h3>Thành phần dinh dưỡng</h3>
+                <div class="specifications">
+                    <div class="spec-item">
+                        <span class="spec-label">Sữa bò tươi</span>
+                        <span class="spec-value">100%</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Protein</span>
+                        <span class="spec-value">3.2g/100ml</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Chất béo</span>
+                        <span class="spec-value">3.5g/100ml</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Carbohydrate</span>
+                        <span class="spec-value">4.8g/100ml</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Canxi</span>
+                        <span class="spec-value">120mg/100ml</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Vitamin D</span>
+                        <span class="spec-value">1.2μg/100ml</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Năng lượng</span>
+                        <span class="spec-value">65kcal/100ml</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Hạn sử dụng</span>
+                        <span class="spec-value">7 ngày</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="instructions">
+                <h3>Hướng dẫn sử dụng</h3>
+                <p><strong>Bảo quản:</strong></p>
+                <p>• Bảo quản trong tủ lạnh ở nhiệt độ 2-8°C</p>
+                <p>• Không để ngoài nhiệt độ phòng quá 2 giờ</p>
+                <p>• Đậy kín nắp sau khi sử dụng</p>
+                
+                <p><strong>Cách sử dụng:</strong></p>
+                <p>• Lắc đều trước khi uống</p>
+                <p>• Có thể uống trực tiếp hoặc pha chế với các món khác</p>
+                <p>• Nên uống trong vòng 3-5 ngày sau khi mở nắp</p>
+                
+                <p><strong>Lưu ý:</strong></p>
+                <p>• Không phù hợp với người không dung nạp lactose</p>
+                <p>• Tránh xa tầm tay trẻ em dưới 3 tuổi</p>
+                <p>• Kiểm tra hạn sử dụng trước khi sử dụng</p>
+            </div>
+
+            <div class="tab-content" id="reviews">
+                <div class="reviews-summary">
+                    <div class="rating-overview">
+                        <div class="overall-rating">4.8</div>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p>156 đánh giá</p>
+                    </div>
+                    <div class="rating-bars">
+                        <div class="rating-bar">
+                            <span class="bar-label">5 sao</span>
+                            <div class="bar-fill">
+                                <div class="bar-progress" style="width: 75%"></div>
+                            </div>
+                            <span class="bar-count">117</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">4 sao</span>
+                            <div class="bar-fill">
+                                <div class="bar-progress" style="width: 20%"></div>
+                            </div>
+                            <span class="bar-count">31</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">3 sao</span>
+                            <div class="bar-fill">
+                                <div class="bar-progress" style="width: 3%"></div>
+                            </div>
+                            <span class="bar-count">5</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">2 sao</span>
+                            <div class="bar-fill">
+                                <div class="bar-progress" style="width: 1%"></div>
+                            </div>
+                            <span class="bar-count">2</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span class="bar-label">1 sao</span>
+                            <div class="bar-fill">
+                                <div class="bar-progress" style="width: 1%"></div>
+                            </div>
+                            <span class="bar-count">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">A</div>
+                            <div>
+                                <div class="reviewer-name">Nguyễn Thị An</div>
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-date">15/01/2025</div>
+                    </div>
+                    <p class="review-text">Sữa rất ngon, thơm và béo tự nhiên. Con tôi rất thích uống. Giao hàng nhanh, đóng gói cẩn thận. Sẽ mua lại!</p>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">B</div>
+                            <div>
+                                <div class="reviewer-name">Trần Văn Bình</div>
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-date">12/01/2025</div>
+                    </div>
+                    <p class="review-text">Chất lượng tuyệt vời, hương vị thơm ngon tự nhiên. Giá cả hợp lý so với chất lượng. Rất hài lòng với sản phẩm này.</p>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">C</div>
+                            <div>
+                                <div class="reviewer-name">Lê Thị Cúc</div>
+                                <div class="stars">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star empty">★</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-date">10/01/2025</div>
+                    </div>
+                    <p class="review-text">Sữa ngon, đóng gói đẹp. Chỉ có điều hạn sử dụng hơi ngắn nên phải uống nhanh. Nhìn chung vẫn rất tốt.</p>
+                </div>
+
+                <div class="write-review">
+                    <h3>Viết đánh giá của bạn</h3>
+                    <form class="review-form" onsubmit="submitReview(event)">
+                        <div class="form-group">
+                            <label>Đánh giá của bạn:</label>
+                            <div class="rating-input" id="ratingInput">
+                                <span class="rating-star" onclick="setRating(1)">★</span>
+                                <span class="rating-star" onclick="setRating(2)">★</span>
+                                <span class="rating-star" onclick="setRating(3)">★</span>
+                                <span class="rating-star" onclick="setRating(4)">★</span>
+                                <span class="rating-star" onclick="setRating(5)">★</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewerName">Tên của bạn:</label>
+                            <input type="text" id="reviewerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewText">Nội dung đánh giá:</label>
+                            <textarea id="reviewText" rows="4" placeholder="Chia sẻ trải nghiệm của bạn về sản phẩm..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-review">Gửi đánh giá</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="related-products">
+            <h2 class="section-title">Sản Phẩm Liên Quan</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🧀</div>
+                    <div class="product-card-info">
+                        <h3 class="product-name">Sữa Chua Hy Lạp</h3>
+                        <div class="product-card-price">35.000₫</div>
+                        <button class="quick-add">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🍼</div>
+                    <div class="product-card-info">
+                        <h3 class="product-name">Sữa Tươi Có Đường</h3>
+                        <div class="product-card-price">42.000₫</div>
+                        <button class="quick-add">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🥤</div>
+                    <div class="product-card-info">
+                        <h3 class="product-name">Sữa Hạnh Nhân</h3>
+                        <div class="product-card-price">58.000₫</div>
+                        <button class="quick-add">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🧈</div>
+                    <div class="product-card-info">
+                        <h3 class="product-name">Bơ Tươi Cao Cấp</h3>
+                        <div class="product-card-price">125.000₫</div>
+                        <button class="quick-add">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Về MilkStore</h3>
+                <p>MilkStore là đơn vị hàng đầu trong lĩnh vực cung cấp các sản phẩm sữa chất lượng cao, đảm bảo nguồn gốc rõ ràng và an toàn cho sức khỏe.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Liên Kết Nhanh</h3>
+                <a href="#home">Trang chủ</a>
+                <a href="#products">Sản phẩm</a>
+                <a href="#about">Giới thiệu</a>
+                <a href="#contact">Liên hệ</a>
+            </div>
+            <div class="footer-column">
+                <h3>Thông Tin Liên Hệ</h3>
+                <p>📍 Địa chỉ: 123 Đường Nguyễn Văn Linh, Quận 7, TP.HCM</p>
+                <p>📧 Email: contact@milkstore.vn</p>
+                <p>📞 Điện thoại: 0123 456 789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 MilkStore. Bản quyền thuộc về MilkStore.</p>
+        </div>
+    </footer>
+
+    <script src="tk1.js"></script>
+</body>
+</html>

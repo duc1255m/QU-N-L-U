@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lẩu Việt - Hương vị đậm đà khó quên</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body class="h-full bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+<div id="logo" class="flex items-center space-x-3 cursor-pointer">
+                    <div class="w-12 h-12 fire-gradient rounded-full flex items-center justify-center text-2xl">
+                        🔥
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black text-white">LẨU VIỆT</h1>
+                        <p class="text-xs text-orange-300 -mt-1">AUTHENTIC TASTE</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="login.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">🏠</span>
+                        <span class="font-medium">Trang chủ</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="product2.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">🍲</span>
+                        <span class="font-medium">Sản phẩm</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="help2.html" class="group flex items-center space-x-2 text-white hover:text-orange-400 transition-all duration-300">
+                        <span class="text-lg">ℹ️</span>
+                        <span class="font-medium">Giới thiệu</span>
+                        <div class="w-0 group-hover:w-full h-0.5 bg-orange-400 transition-all duration-300"></div>
+                    </a>
+                    <a href="contact2.html" class="group flex items-center space-x-2 text-orange-400 transition-all duration-300">
+                        <span class="text-lg">📞</span>
+                        <span class="font-medium">Liên hệ</span>
+                        <div class="w-full h-0.5 bg-orange-400"></div>
+                    </a>
+                </nav>
+                
+                <!-- Login Button -->
+                <button class="fire-gradient px-8 py-3 rounded-full font-bold text-white neon-glow" id="openLoginBtn">
+                    TÀI KHOẢN CỦA TÔI
+                </button>
+                
+                <!-- Mobile Menu -->
+                <button class="lg:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="contact" class="relative min-h-screen flex items-center justify-center pattern-bg overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-32 left-10 floating-animation">
+            <div class="w-20 h-20 fire-gradient rounded-full opacity-20"></div>
+        </div>
+        <div class="absolute bottom-20 right-10 floating-animation" style="animation-delay: -2s;">
+            <div class="w-32 h-32 bg-orange-500 rounded-full opacity-10"></div>
+        </div>
+        <div class="absolute top-1/2 right-1/4 floating-animation" style="animation-delay: -4s;">
+            <div class="w-16 h-16 bg-red-500 rounded-full opacity-15"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 slide-in">
+            <div class="mb-8">
+                <div class="text-8xl mb-6 floating-animation">📞</div>
+                <h1 class="text-6xl lg:text-8xl font-black mb-6">
+                    <span class="fire-gradient bg-clip-text text-transparent">LIÊN HỆ</span>
+                </h1>
+                <p class="text-2xl lg:text-3xl text-gray-300 mb-8 font-light max-w-4xl mx-auto">
+                    Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="slide-in">
+                    <h2 class="text-4xl font-black mb-8">
+                        <span class="fire-gradient bg-clip-text text-transparent">GỬI TIN NHẮN</span>
+                    </h2>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-white font-semibold mb-2">Họ *</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName"
+                                    required
+                                    class="w-full px-6 py-4 bg-gray-700 border border-gray-600 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent glass-effect transition-all duration-300"
+                                    placeholder="Nhập họ của bạn"
+                                >
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-white font-semibold mb-2">Tên *</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName"
+                                    required
+                                    class="w-full px-6 py-4 bg-gray-700 border border-gray-600 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent glass-effect transition-all duration-300"
+                                    placeholder="Nhập tên của bạn"
+                                >
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-white font-semibold mb-2">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                required
+                                class="w-full px-6 py-4 bg-gray-700 border border-gray-600 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent glass-effect transition-all duration-300"
+                                placeholder="example@email.com"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-white font-semibold mb-2">Số điện thoại</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone"
+                                class="w-full px-6 py-4 bg-gray-700 border border-gray-600 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent glass-effect transition-all duration-300"
+                                placeholder="0123 456 789"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-white font-semibold mb-2">Chủ đề *</label>
+                            <select 
+                                id="subject" 
+                                name="subject"
+                                required
+                                class="w-full px-6 py-4 bg-gray-700 border border-gray-600 rounded-2xl text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent glass-effect transition-all duration-300"
+                            >
+                                <option value="">Chọn chủ đề</option>
+                                <option value="reservation">Đặt bàn</option>
+                                <option value="feedback">Góp ý</option>
+                                <option value="complaint">Khiếu nại</option>
+                                <option value="partnership">Hợp tác</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-white font-semibold mb-2">Tin nhắn *</label>
+                            <textarea 
+                                id="message" 
+                                name="message"
+                                required
+                                rows="6"
+                                class="w-full px-6 py-4 bg-gray-700 border border-gray-600 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent glass-effect transition-all duration-300 resize-none"
+                                placeholder="Nhập tin nhắn của bạn..."
+                            ></textarea>
+                        </div>
+                        
+                        <button 
+                            type="submit"
+                            class="w-full fire-gradient px-8 py-4 rounded-2xl font-bold text-white text-lg neon-glow transition-all duration-300 hover:scale-105"
+                        >
+                            GỬI TIN NHẮN
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div id="successMessage" class="form-success mt-8 p-6 glass-effect rounded-2xl neon-glow">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">✅</div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Gửi thành công!</h3>
+                            <p class="text-gray-300">Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="slide-in">
+                    <h2 class="text-4xl font-black mb-8">
+                        <span class="fire-gradient bg-clip-text text-transparent">THÔNG TIN LIÊN HỆ</span>
+                    </h2>
+                    
+                    <div class="space-y-8">
+                        <!-- Phone -->
+                        <div class="flex items-start space-x-4 glass-effect p-6 rounded-2xl neon-glow">
+                            <div class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                                📞
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Điện thoại</h3>
+                                <p class="text-gray-300 text-lg">Hotline: 0123 456 789</p>
+                                <p class="text-gray-300">Đặt bàn: 0123 456 790</p>
+                                <p class="text-gray-400 text-sm mt-2">Hoạt động 24/7</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="flex items-start space-x-4 glass-effect p-6 rounded-2xl neon-glow">
+                            <div class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                                ✉️
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Email</h3>
+                                <p class="text-gray-300 text-lg">info@lauviet.com</p>
+                                <p class="text-gray-300">support@lauviet.com</p>
+                                <p class="text-gray-400 text-sm mt-2">Phản hồi trong 24h</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Address -->
+                        <div class="flex items-start space-x-4 glass-effect p-6 rounded-2xl neon-glow">
+                            <div class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                                📍
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Địa chỉ</h3>
+                                <p class="text-gray-300 text-lg">123 Đường Nguyễn Văn Linh</p>
+                                <p class="text-gray-300">Quận 7, TP. Hồ Chí Minh</p>
+                                <p class="text-gray-400 text-sm mt-2">Chi nhánh chính</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Hours -->
+                        <div class="flex items-start space-x-4 glass-effect p-6 rounded-2xl neon-glow">
+                            <div class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-2xl flex-shrink-0">
+                                🕒
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Giờ hoạt động</h3>
+                                <p class="text-gray-300 text-lg">Thứ 2 - Chủ nhật</p>
+                                <p class="text-gray-300">10:00 - 22:00</p>
+                                <p class="text-gray-400 text-sm mt-2">Không nghỉ lễ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-20 bg-gray-900 pattern-bg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-4">
+                    <span class="fire-gradient bg-clip-text text-transparent">VỊ TRÍ</span>
+                </h2>
+                <p class="text-xl text-gray-400">Tìm đường đến nhà hàng</p>
+            </div>
+            
+            <!-- Interactive Map -->
+            <div class="glass-effect rounded-3xl overflow-hidden neon-glow">
+                <div class="map-container h-96 flex items-center justify-center relative">
+                    <div class="text-center">
+                        <div class="map-pin text-6xl mb-4">📍</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Lẩu Việt - Chi nhánh chính</h3>
+                        <p class="text-gray-300 mb-4">123 Đường Nguyễn Văn Linh, Quận 7, TP.HCM</p>
+                        <button class="fire-gradient px-8 py-3 rounded-full font-bold text-white neon-glow transition-all duration-300 hover:scale-105">
+                            XEM TRÊN BẢN ĐỒ
+                        </button>
+                    </div>
+                    
+                    <!-- Map Grid Pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="grid grid-cols-8 grid-rows-6 h-full">
+                            <div class="border border-gray-600"></div>
+                            <div class="border border-gray-600"></div>
+                            <div class="border border-gray-600"></div>
+                            <div class="border border-gray-600"></div>
+                            <div class="border border-gray-600"></div>
+                            <div class="border border-gray-600"></div>
+                            <div class="border border-gray-600"></div>
+                            <div class="border border-gray-600"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-4">
+                    <span class="fire-gradient bg-clip-text text-transparent">CHI NHÁNH</span>
+                </h2>
+                <p class="text-xl text-gray-400">Hệ thống nhà hàng trên toàn thành phố</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Branch 1 -->
+                <div class="glass-effect rounded-3xl p-8 neon-glow group hover:scale-105 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">🏪</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Chi nhánh Quận 1</h3>
+                        <div class="w-16 h-1 fire-gradient rounded-full mx-auto"></div>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">📍</span>
+                            <span>456 Đường Lê Lợi, Quận 1</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">📞</span>
+                            <span>0123 456 791</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">🕒</span>
+                            <span>10:00 - 23:00</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">🚗</span>
+                            <span>Có bãi đỗ xe</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Branch 2 -->
+                <div class="glass-effect rounded-3xl p-8 neon-glow group hover:scale-105 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">🏪</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Chi nhánh Quận 3</h3>
+                        <div class="w-16 h-1 fire-gradient rounded-full mx-auto"></div>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">📍</span>
+                            <span>789 Đường Võ Văn Tần, Quận 3</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">📞</span>
+                            <span>0123 456 792</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">🕒</span>
+                            <span>10:00 - 22:30</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">🚇</span>
+                            <span>Gần ga metro</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Branch 3 -->
+                <div class="glass-effect rounded-3xl p-8 neon-glow group hover:scale-105 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">🏪</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Chi nhánh Thủ Đức</h3>
+                        <div class="w-16 h-1 fire-gradient rounded-full mx-auto"></div>
+                    </div>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">📍</span>
+                            <span>321 Đường Võ Văn Ngân, Thủ Đức</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">📞</span>
+                            <span>0123 456 793</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">🕒</span>
+                            <span>10:00 - 22:00</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400">🎓</span>
+                            <span>Gần khu đại học</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-900 pattern-bg">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black mb-4">
+                    <span class="fire-gradient bg-clip-text text-transparent">CÂU HỎI THƯỜNG GẶP</span>
+                </h2>
+                <p class="text-xl text-gray-400">Những thắc mắc phổ biến của khách hàng</p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="glass-effect rounded-2xl overflow-hidden neon-glow">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-700 transition-colors duration-300" onclick="toggleAccordion(1)">
+                        <h3 class="text-xl font-bold text-white">Làm thế nào để đặt bàn?</h3>
+                        <span id="icon1" class="text-2xl text-orange-400 transition-transform duration-300">+</span>
+                    </button>
+                    <div id="content1" class="accordion-content px-8 pb-6">
+                        <p class="text-gray-300 leading-relaxed">
+                            Bạn có thể đặt bàn qua hotline 0123 456 789, website của chúng tôi, hoặc trực tiếp tại nhà hàng. 
+                            Chúng tôi khuyến khích đặt bàn trước để đảm bảo có chỗ ngồi, đặc biệt vào cuối tuần và ngày lễ.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="glass-effect rounded-2xl overflow-hidden neon-glow">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-700 transition-colors duration-300" onclick="toggleAccordion(2)">
+                        <h3 class="text-xl font-bold text-white">Có dịch vụ giao hàng không?</h3>
+                        <span id="icon2" class="text-2xl text-orange-400 transition-transform duration-300">+</span>
+                    </button>
+                    <div id="content2" class="accordion-content px-8 pb-6">
+                        <p class="text-gray-300 leading-relaxed">
+                            Có, chúng tôi có dịch vụ giao hàng trong bán kính 5km từ mỗi chi nhánh. 
+                            Phí giao hàng từ 15.000đ - 25.000đ tùy khoảng cách. Đơn hàng từ 300.000đ được miễn phí giao hàng.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="glass-effect rounded-2xl overflow-hidden neon-glow">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-700 transition-colors duration-300" onclick="toggleAccordion(3)">
+                        <h3 class="text-xl font-bold text-white">Có thực đơn chay không?</h3>
+                        <span id="icon3" class="text-2xl text-orange-400 transition-transform duration-300">+</span>
+                    </button>
+                    <div id="content3" class="accordion-content px-8 pb-6">
+                        <p class="text-gray-300 leading-relaxed">
+                            Có, chúng tôi có thực đơn chay đa dạng với lẩu nấm, các loại rau củ tươi ngon, 
+                            đậu phụ, nấm các loại và các món phụ chay. Vui lòng thông báo khi đặt bàn để được tư vấn tốt nhất.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="glass-effect rounded-2xl overflow-hidden neon-glow">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-700 transition-colors duration-300" onclick="toggleAccordion(4)">
+                        <h3 class="text-xl font-bold text-white">Có chương trình khuyến mãi không?</h3>
+                        <span id="icon4" class="text-2xl text-orange-400 transition-transform duration-300">+</span>
+                    </button>
+                    <div id="content4" class="accordion-content px-8 pb-6">
+                        <p class="text-gray-300 leading-relaxed">
+                            Chúng tôi thường xuyên có các chương trình khuyến mãi hấp dẫn như giảm giá sinh nhật, 
+                            ưu đãi nhóm, happy hour. Theo dõi fanpage và website để cập nhật thông tin khuyến mãi mới nhất.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="glass-effect rounded-2xl overflow-hidden neon-glow">
+                    <button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-700 transition-colors duration-300" onclick="toggleAccordion(5)">
+                        <h3 class="text-xl font-bold text-white">Có phục vụ tiệc nhóm lớn không?</h3>
+                        <span id="icon5" class="text-2xl text-orange-400 transition-transform duration-300">+</span>
+                    </button>
+                    <div id="content5" class="accordion-content px-8 pb-6">
+                        <p class="text-gray-300 leading-relaxed">
+                            Có, chúng tôi có phòng VIP và khu vực riêng phục vụ tiệc nhóm từ 10-50 người. 
+                            Có thể tổ chức sinh nhật, họp mặt công ty, tiệc gia đình. Vui lòng liên hệ trước để được tư vấn và đặt chỗ.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div id="chatBubble" class="chat-bubble glass-effect rounded-2xl p-6">
+            <div class="mb-4">
+                <h4 class="text-lg font-bold text-white mb-2">💬 Chat với chúng tôi</h4>
+                <div class="space-y-3">
+                    <div class="bg-gray-700 rounded-2xl p-3">
+                        <p class="text-sm text-gray-300">Xin chào! Chúng tôi có thể giúp gì cho bạn?</p>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-orange-500 hover:bg-orange-600 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-300">
+                            Đặt bàn
+                        </button>
+                        <button class="flex-1 bg-orange-500 hover:bg-orange-600 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-300">
+                            Thực đơn
+                        </button>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 bg-gray-600 hover:bg-gray-500 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-300">
+                            Khuyến mãi
+                        </button>
+                        <button class="flex-1 bg-gray-600 hover:bg-gray-500 px-3 py-2 rounded-xl text-sm font-medium transition-colors duration-300">
+                            Liên hệ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button 
+            id="chatToggle"
+            class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-2xl neon-glow pulse-animation"
+            onclick="toggleChat()"
+        >
+            💬
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-3xl">
+                            🔥
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-black text-white">LẨU VIỆT</h3>
+                            <p class="text-orange-300">AUTHENTIC TASTE</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Mang đến cho bạn trải nghiệm ẩm thực lẩu Việt Nam đích thực với hương vị đậm đà, khó quên trong không gian ấm cúng và sang trọng.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            📘
+                        </button>
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            📷
+                        </button>
+                        <button class="w-12 h-12 glass-effect rounded-full flex items-center justify-center hover:fire-gradient transition-all duration-300">
+                            🐦
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">LIÊN HỆ</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-orange-400 text-xl">📍</span>
+                            <span class="text-gray-300">123 Đường Nguyễn Văn Linh<br>Quận 7, TP.HCM</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">📞</span>
+                            <span class="text-gray-300">0123 456 789</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">✉️</span>
+                            <span class="text-gray-300">info@lauviet.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-orange-400 text-xl">🕒</span>
+                            <span class="text-gray-300">10:00 - 22:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-6">LIÊN KẾT</h4>
+                    <div class="space-y-3">
+                        <a href="#home" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Trang chủ</a>
+                        <a href="#about" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Giới thiệu</a>
+                        <a href="#products" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Sản phẩm</a>
+                        <a href="#contact" class="block text-gray-300 hover:text-orange-400 transition-colors duration-300">Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2025 LauViet. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="contact2.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'994052cb67b20a04',t:'MTc2MTM4MDcyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

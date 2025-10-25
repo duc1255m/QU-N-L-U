@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lẩu Việt - Hương vị đậm đà khó quên</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="h-full bg-gray-900 text-white">
+  <!-- Header -->
+  <header class="fixed w-full top-0 z-50 glass-effect">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 fire-gradient rounded-full flex items-center justify-center text-2xl">🔥</div>
+          <div>
+            <h1 class=" logo text-2xl font-black text-white">LẨU VIỆT</h1>
+            <p class="text-xs text-orange-300 -mt-1">AUTHENTIC TASTE</p>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="index.html" class="nav-link">🏠 Trang chủ</a>
+          <a href="product.html" class="nav-link">🍲 Sản phẩm</a>
+          <a href="help.html" class="nav-link">ℹ️ Giới thiệu</a>
+          <a href="contact.html" class="nav-link">📞 Liên hệ</a>
+        </nav>
+
+        <!-- Login -->
+        <button class="fire-gradient px-8 py-3 rounded-full font-bold text-white neon-glow" id="openLoginBtn">ĐĂNG NHẬP</button>
+
+        <!-- Mobile Menu Icon -->
+        <button id="menu-btn" class="lg:hidden text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+            <!-- Overlay nền mờ -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Popup Đăng nhập -->
+  <div id="loginPopup" class="popup">
+    <div class="popup-content">
+      <span id="closePopup" class="close">&times;</span>
+      <h2>ĐĂNG NHẬP</h2>
+      <form id="loginForm">
+        <label for="username">Tên người dùng hoặc email *</label>
+        <input type="text" id="username" name="username" placeholder="username@example.com" required>
+
+        <label for="password">Mật khẩu *</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required>
+
+        <div class="remember">
+          <input type="checkbox" id="remember">
+          <label for="remember">Nhớ tôi</label>
+        </div>
+
+        <button type="submit" class="btn2">ĐĂNG NHẬP</button>
+        <a href="#" id="forgotLink" class="forgot">Quên mật khẩu?</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- Popup Quên mật khẩu -->
+  <div id="forgotPopup" class="popup">
+    <div class="popup-content">
+      <span id="closeForgot" class="close">&times;</span>
+      <h2>QUÊN MẬT KHẨU</h2>
+      <p>Vui lòng nhập địa chỉ email bạn đã đăng ký. Chúng tôi sẽ gửi liên kết khôi phục mật khẩu cho bạn.</p>
+      <form id="forgotForm">
+        <label for="forgotEmail">Email *</label>
+        <input type="email" id="forgotEmail" name="forgotEmail" placeholder="you@example.com" required>
+        <button type="submit" class="btn">ĐẶT LẠI MẬT KHẨU</button>
+      </form>
+      <div class="back-login">
+        <a href="#" id="backToLogin">← Quay lại đăng nhập</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center pattern-bg overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+
+    <div class="relative z-10 text-center px-6 slide-in">
+      <div class="mb-8">
+        <div class="text-8xl mb-4 floating-animation">🍲</div>
+        <h1 class="text-6xl lg:text-8xl font-black mb-4">
+          <span class="fire-gradient bg-clip-text text-transparent">LẨU VIỆT</span>
+        </h1>
+        <p class="text-2xl lg:text-3xl text-gray-300 mb-8 font-light">Hương vị đậm đà • Khó quên</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <button class="fire-gradient px-10 py-4 rounded-full font-bold text-xl neon-glow">KHÁM PHÁ MENU</button>
+        <button
+          class="glass-effect px-10 py-4 rounded-full font-bold text-xl border-2 border-orange-400 hover:bg-orange-400 hover:text-gray-900 transition-all duration-300">
+          ĐẶT BÀN NGAY
+        </button>
+      </div>
+    </div>
+  </section>
+
+ <!-- Featured Dishes -->
+<section id="products" class="py-20 bg-gray-800">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-black mb-4">
+        <span class="fire-gradient bg-clip-text text-transparent">ĐẶC SẢN</span>
+      </h2>
+      <p class="text-xl text-gray-400">Những món ăn không thể bỏ qua</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Món 1 -->
+      <div class="dish-card bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition-all duration-300">
+        <img src="image/lẩu thái.jpg" alt="Lẩu Thái" class="w-full h-56 object-cover">
+        <div class="p-6 text-center">
+          <h3 class="text-2xl font-bold text-white mb-2">LẨU THÁI</h3>
+          <p class="text-gray-400 text-sm">Chua cay đậm đà hương vị Thái Lan</p>
+        </div>
+      </div>
+
+      <!-- Món 2 -->
+      <div class="dish-card bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition-all duration-300">
+        <img src="image/lẩu thịt bò.jpg" alt="Thịt Bò" class="w-full h-56 object-cover">
+        <div class="p-6 text-center">
+          <h3 class="text-2xl font-bold text-white mb-2">THỊT BÒ</h3>
+          <p class="text-gray-400 text-sm">Tươi ngon – lựa chọn cao cấp</p>
+        </div>
+      </div>
+
+      <!-- Món 3 -->
+      <div class="dish-card bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition-all duration-300">
+        <img src="image/lẩu hải sản.jpg" alt="Hải Sản" class="w-full h-56 object-cover">
+        <div class="p-6 text-center">
+          <h3 class="text-2xl font-bold text-white mb-2">HẢI SẢN</h3>
+          <p class="text-gray-400 text-sm">Tươi sống từ biển – hương vị nguyên bản</p>
+        </div>
+      </div>
+
+      <!-- Món 4 -->
+      <div class="dish-card bg-gray-900 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition-all duration-300">
+        <img src="image/không gian.jpg" alt="Không Gian" class="w-full h-56 object-cover">
+        <div class="p-6 text-center">
+          <h3 class="text-2xl font-bold text-white mb-2">KHÔNG GIAN</h3>
+          <p class="text-gray-400 text-sm">Ấm cúng – sang trọng – đậm chất Việt</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section id="news" class="py-20 bg-gray-900 pattern-bg">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-black mb-4">
+        <span class="fire-gradient bg-clip-text text-transparent">TIN TỨC</span>
+      </h2>
+      <p class="text-xl text-gray-400">Cập nhật mới nhất từ Lẩu Việt</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Tin 1 -->
+      <article class="news-card bg-gray-800 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-300">
+        <img src="image/chi nhánh.jpg" alt="Khai trương chi nhánh mới" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-white mb-2">Khai trương chi nhánh mới</h3>
+          <p class="text-gray-400 text-sm">Lẩu Việt chính thức mở cửa chi nhánh thứ 5 tại Quận 7.</p>
+        </div>
+      </article>
+
+      <!-- Tin 2 -->
+      <article class="news-card bg-gray-800 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-300">
+        <img src="image/giảm giá 40.jpg" alt="Giảm giá 40% cuối tuần" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-white mb-2">Giảm giá 40% cuối tuần</h3>
+          <p class="text-gray-400 text-sm">Ưu đãi lớn nhất trong năm! Giảm 40% tất cả món lẩu.</p>
+        </div>
+      </article>
+
+      <!-- Tin 3 -->
+      <article class="news-card bg-gray-800 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-300">
+        <img src="image/menu.jpg" alt="Menu mùa đông đặc biệt" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-white mb-2">Menu mùa đông đặc biệt</h3>
+          <p class="text-gray-400 text-sm">Thực đơn mùa đông ấm nóng, bổ dưỡng – sẵn sàng phục vụ bạn.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-2">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-16 h-16 fire-gradient rounded-full flex items-center justify-center text-3xl">🔥</div>
+            <div>
+              <h3 class="text-3xl font-black text-white">LẨU VIỆT</h3>
+              <p class="text-orange-300">AUTHENTIC TASTE</p>
+            </div>
+          </div>
+          <p class="text-gray-400 text-lg leading-relaxed mb-6">
+            Trải nghiệm ẩm thực lẩu Việt Nam đích thực, hương vị khó quên.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold text-white mb-6">LIÊN HỆ</h4>
+          <p class="text-gray-300">📍 123 Nguyễn Văn Linh, Quận 7, TP.HCM</p>
+          <p class="text-gray-300">📞 0123 456 789</p>
+          <p class="text-gray-300">✉️ info@lauviet.com</p>
+          <p class="text-gray-300">🕒 10:00 - 22:00</p>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold text-white mb-6">LIÊN KẾT</h4>
+          <a href="#home" class="footer-link">Trang chủ</a>
+          <a href="#about" class="footer-link">Giới thiệu</a>
+          <a href="#products" class="footer-link">Sản phẩm</a>
+          <a href="#contact" class="footer-link">Liên hệ</a>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+        <p class="text-gray-500">&copy; 2025 LauViet. Tất cả quyền được bảo lưu.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
