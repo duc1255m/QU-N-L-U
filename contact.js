@@ -84,3 +84,7 @@
       window.location.href = 'index.html'; // hoặc '#home' nếu là cùng trang
   });
   
+
+document.getElementById("map").addEventListener("click", function () {
+    window.open("https://www.youtube.com/watch?v=R9MYhvVfzOU", "_blank");
+});
